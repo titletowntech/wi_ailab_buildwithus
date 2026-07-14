@@ -58,8 +58,6 @@ Each weekly meeting follows a standard agenda:
 24. **Business readiness review** — Refine use case, outcomes, and documents.
 25. **Collective learning** — Share discoveries, lessons learned, emerging use cases, and open questions across the community.
 
-> Guiding question each week: *"Could this team begin building within 30 minutes if the event started tomorrow?"* Any gap becomes the highest-priority action item for the following week.
-
 ---
 
 ## Phase 5: Final Readiness Review — Go / No-Go (One Week Before Event)
@@ -93,11 +91,3 @@ Each weekly meeting follows a standard agenda:
 38. **Build with GitHub Copilot** — Use AI-assisted coding to build or modify an application that uses the agent.
 39. **Test the application** — Validate the app works with the agent.
 40. **Wrap-up** — Review outcomes and discuss plans for future deployment.
-
----
-
-## Success Principle
-
-Every step in this timeline serves one goal:
-
-> **If the event started tomorrow, could the team begin building within 30 minutes?**

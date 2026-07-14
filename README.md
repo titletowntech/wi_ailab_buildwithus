@@ -13,12 +13,6 @@ If you're new here, start with [What This Program Is](#what-this-program-is), th
 - **Day 1** — Build and evaluate a **Technical Support / Knowledge Base agent** in Azure AI Foundry, grounded in company-provided documents.
 - **Day 2** — Use **GitHub Copilot and VS Code** to build or modify a small app that uses the Day 1 agent — learning to build *with AI assistance*.
 
-It is a **lab, not a lecture**. The entire program is designed around one guiding question:
-
-> **If the event started tomorrow, could the team begin building within 30 minutes?**
-
-Any gap that answer reveals becomes the highest-priority action item for the following week.
-
 ### Scope for This Round
 
 **In scope:** Technical Support agents, Knowledge Base agents, troubleshooting agents, internal knowledge discovery, support-documentation search, agents grounded in company documents, a simple app that uses the agent, and AI-assisted coding with GitHub Copilot.
@@ -80,6 +74,8 @@ See the full step-by-step [High Level Timeline](01-Program-Overview/High%20Level
 | [Sample Files - Good/](05-Sample-Files/Sample%20Files%20-%20Good/) | Clean bike-troubleshooting knowledge base for the guided agent and good-data demo | Organizers |
 | [Sample Files - Bad/](05-Sample-Files/Sample%20Files%20-%20Bad/) | Messy versions of the same topics for the bad-data demo | Organizers |
 | [Day 2 Agenda.md](03-Event-Agendas/Day%202%20Agenda.md) | Event Day 2 schedule — build the app with GitHub Copilot | Everyone |
+| [Day 2 Facilitator Guide.md](04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md) | Step-by-step plan for running Day 2 | Organizers |
+| [Copilot 101 - Sample Markdown and Prompts.md](04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md) | Day 2 Copilot 101 handout: sample Markdown and prompt examples | Everyone |
 | [Foundry Readiness Page Prompt.md](04-Facilitator-Guides/Foundry%20Readiness%20Page%20Prompt.md) | Prompt to add an Azure AI Foundry readiness page to the pre-skilling site | Organizers |
 | [Business Readiness Worksheet.md](02-Participant-Materials/Business%20Readiness%20Worksheet.md) | Template to define a support / knowledge-base use case | Participants |
 | [Technical Readiness Worksheet.md](02-Participant-Materials/Technical%20Readiness%20Worksheet.md) | Template to confirm environment and tooling readiness | Participants |

@@ -3,8 +3,6 @@
 A standard, repeatable agenda for the weekly readiness meetings (Weeks 1–4). These meetings are collaborative by design — we succeed together. Everyone is encouraged to share what's working, ask questions openly, and help one another clear blockers so no team is left behind. The objective every week:
 
 > **Eliminate business and technical barriers before event week.**
->
-> Guiding question: *If the event started tomorrow, could the team begin building within 30 minutes?*
 
 ---
 

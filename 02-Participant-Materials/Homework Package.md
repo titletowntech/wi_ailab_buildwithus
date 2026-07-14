@@ -2,8 +2,6 @@
 
 Welcome to Build with us: Support and Knowledge Base for Beginners! Before the event, each organization completes this homework so you arrive ready to build — not set up. Your progress will be reviewed together during the weekly readiness meetings, where we help each other clear any blockers.
 
-> **The goal:** If the event started tomorrow, your team could begin building within 30 minutes.
-
 ---
 
 ## How to Use This Package
