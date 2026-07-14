@@ -42,9 +42,9 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [ ] Define acceptance criteria for organizations
 - [ ] Review and approve applicants into the program
 - [ ] Send acceptance / onboarding communications
-- [ ] Set up the Build with us Teams community
+- [ ] Set up the Build with us Teams community — [Teams Community Setup Guide.md](Teams%20Community%20Setup%20Guide.md)
 - [ ] Add approved organizations to the Teams community
-- [ ] Configure Teams channels (announcements, readiness support, Q&A, file sharing, blocker tracking)
+- [ ] Configure Teams channels (announcements, readiness support, Q&A, file sharing, blocker tracking) — [Teams Community Setup Guide.md](Teams%20Community%20Setup%20Guide.md)
 
 ---
 
