@@ -18,6 +18,8 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [x] Write the Day 1 guided-agent prompt and test questions (should-work / should-not-work) — [Day 1 Guided Agent Kit.md](../04-Facilitator-Guides/Day%201%20Guided%20Agent%20Kit.md)
 - [x] Prepare the Day 2 template application — using the Wisconsin AI Co-Innovation Lab Prototype Template ([titletowntech/wi_ailab_prototype_template](https://github.com/titletowntech/wi_ailab_prototype_template))
 - [x] Create the Day 2 facilitator guide from the [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md) — [Day 2 Facilitator Guide.md](../04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md)
+- [x] Write the Day 2 guided-build script, connection recipe, and Copilot prompts — [Day 2 Guided Agent Kit.md](../04-Facilitator-Guides/Day%202%20Guided%20Agent%20Kit.md)
+- [x] Prepare the Day 2 Copilot 101 handout (sample Markdown and prompt examples) — [Copilot 101 - Sample Markdown and Prompts.md](../04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md)
 
 ---
 

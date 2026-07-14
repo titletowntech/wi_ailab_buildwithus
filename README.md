@@ -75,6 +75,7 @@ See the full step-by-step [High Level Timeline](01-Program-Overview/High%20Level
 | [Sample Files - Bad/](05-Sample-Files/Sample%20Files%20-%20Bad/) | Messy versions of the same topics for the bad-data demo | Organizers |
 | [Day 2 Agenda.md](03-Event-Agendas/Day%202%20Agenda.md) | Event Day 2 schedule — build the app with GitHub Copilot | Everyone |
 | [Day 2 Facilitator Guide.md](04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md) | Step-by-step plan for running Day 2 | Organizers |
+| [Day 2 Guided Agent Kit.md](04-Facilitator-Guides/Day%202%20Guided%20Agent%20Kit.md) | Day 2 guided-build script, connection recipe, and Copilot prompts | Organizers |
 | [Copilot 101 - Sample Markdown and Prompts.md](04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md) | Day 2 Copilot 101 handout: sample Markdown and prompt examples | Everyone |
 | [Foundry Readiness Page Prompt.md](04-Facilitator-Guides/Foundry%20Readiness%20Page%20Prompt.md) | Prompt to add an Azure AI Foundry readiness page to the pre-skilling site | Organizers |
 | [Business Readiness Worksheet.md](02-Participant-Materials/Business%20Readiness%20Worksheet.md) | Template to define a support / knowledge-base use case | Participants |

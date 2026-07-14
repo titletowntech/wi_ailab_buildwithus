@@ -4,7 +4,7 @@ A detailed, step-by-step plan for the facilitator to run Day 2. Work through it 
 
 **Day 2 focus:** Each company uses **GitHub Copilot and VS Code** to build a small app around the agent they created on Day 1 — first a guided build together using the provided template, then a version customized for their own use case. The theme: *building software with AI assistance.*
 
-Companion documents: [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md) · [Day 1 Facilitator Guide.md](Day%201%20Facilitator%20Guide.md)
+Companion documents: [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md) · [Day 1 Facilitator Guide.md](Day%201%20Facilitator%20Guide.md) · [Day 2 Guided Agent Kit.md](Day%202%20Guided%20Agent%20Kit.md)
 
 Template app: the **Wisconsin AI Co-Innovation Lab Prototype Template** ([titletowntech/wi_ailab_prototype_template](https://github.com/titletowntech/wi_ailab_prototype_template)) — a reusable Flask framework where each prototype lives in its own folder and a developer only edits a handful of files.
 
@@ -132,6 +132,8 @@ Move on when: everyone has generated and accepted (or rejected) at least one Cop
 ## Step 4 · Guided Build — Connect the Agent (Template App)
 
 **Goal:** Everyone builds the *same* app together using the template, connects it to a Day 1 agent, and sees it respond. This is the anchor of the day — go slow enough that everyone succeeds.
+
+Use the [Day 2 Guided Agent Kit](Day%202%20Guided%20Agent%20Kit.md) for the exact build script, connection recipe, and step-by-step Copilot prompts.
 
 ### 4a. Tour the template
 1. Walk the room through the template's structure: each prototype lives in its own folder under `projects/`, and a developer only edits a few files.
