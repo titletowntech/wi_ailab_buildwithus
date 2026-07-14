@@ -1,4 +1,4 @@
-# Build With Us: AI as a Teammate — Day 1 Agenda
+# Build with us: Support and Knowledge Base for Beginners — Day 1 Agenda
 
 **Focus:** Build and evaluate a Technical Support / Knowledge Base agent in Azure AI Foundry.
 **Schedule:** 9:00 AM – 3:00 PM
@@ -53,14 +53,14 @@ Set the context and the goal for the day.
 Everyone builds the same agent together using materials we provide.
 
 - We provide the prompt
-- Participants upload **our** sample files
+- Participants upload **our** sample files ([Sample Files - Good](../05-Sample-Files/Sample%20Files%20-%20Good/))
 - **Testing**
   - Run predefined questions that *should* work
   - Run predefined questions that *should not* work
 - **Deploy** the agent
 - **Best Practices: good data vs. bad data**
   - Show what represents good data and bad data
-  - Use two pre-made file sets — start with the good set, then switch to the bad set to show the difference in results
+  - Use two pre-made file sets ([Sample Files - Good](../05-Sample-Files/Sample%20Files%20-%20Good/) and [Sample Files - Bad](../05-Sample-Files/Sample%20Files%20-%20Bad/)) — start with the good set, then switch to the bad set to show the difference in results
 
 ---
 

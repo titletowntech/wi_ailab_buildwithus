@@ -1,6 +1,6 @@
 # Technical Readiness Worksheet
 
-**Build With Us: AI as a Teammate**
+**Build with us: Support and Knowledge Base for Beginners**
 
 Use this worksheet to confirm your environment is ready before the event.
 

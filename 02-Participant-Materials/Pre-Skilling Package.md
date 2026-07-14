@@ -1,4 +1,4 @@
-# Build With Us: AI as a Teammate — Pre-Skilling Package
+# Build with us: Support and Knowledge Base for Beginners — Pre-Skilling Package
 
 This package covers the **learning** you complete before the event: the Microsoft AI Co-Innovation Lab Getting Started curriculum. It introduces the core concepts you'll use when building your agent.
 
@@ -10,7 +10,7 @@ This package covers the **learning** you complete before the event: the Microsof
 
 1. Work through the parts below at your own pace before the event.
 2. Bring any questions to the weekly readiness meetings.
-3. Post questions and share discoveries in the Build With Us Teams community.
+3. Post questions and share discoveries in the Build with us Teams community.
 
 No deep technical background is required — everything is written in plain language for non-experts.
 

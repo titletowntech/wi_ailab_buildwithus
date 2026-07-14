@@ -1,6 +1,6 @@
-# Build With Us: AI as a Teammate — Day 2 Agenda
+# Build with us: Support and Knowledge Base for Beginners — Day 2 Agenda
 
-**Focus:** Build software with AI as a teammate — use GitHub Copilot and VS Code to build an app that uses the agent from Day 1.
+**Focus:** Build software with AI assistance — use GitHub Copilot and VS Code to build an app that uses the agent from Day 1.
 **Schedule:** 9:00 AM – 3:00 PM
 
 ---
@@ -38,7 +38,7 @@ Set the context and the goal for the day.
 
 - What we're building: an app that uses the agent from Day 1
 - Show a finished result — what they will build today
-- How AI acts as a teammate throughout the build
+- How AI assists you throughout the build
 
 ---
 
@@ -95,7 +95,7 @@ Companies optionally demo what they built:
 
 - **Problem** — what they set out to solve
 - **Solution** — the app they built
-- **Lessons** — what they learned building with AI as a teammate
+- **Lessons** — what they learned building with AI assistance
 
 ---
 

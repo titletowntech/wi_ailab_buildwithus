@@ -1,6 +1,6 @@
 # Business Readiness Worksheet
 
-**Build With Us: AI as a Teammate**
+**Build with us: Support and Knowledge Base for Beginners**
 
 Use this worksheet to define a Technical Support or Knowledge Base use case before the event.
 

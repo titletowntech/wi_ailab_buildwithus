@@ -1,4 +1,4 @@
-# Build With Us: AI as a Teammate — Event Timeline
+# Build with us: Support and Knowledge Base for Beginners — Event Timeline
 
 A high-level, chronological timeline of every step in the program, from initial registration through the end of the two-day event.
 
@@ -9,7 +9,7 @@ A high-level, chronological timeline of every step in the program, from initial 
 1. **Organizations register** — Submit primary point of contact, use case description, desired business outcome, and expected attendee list.
 2. **Applications reviewed** — Organizations are approved and accepted into the program.
 3. **Onboarding begins** — Approved organizations receive onboarding communications.
-4. **Teams community access** — Participants are added to the Build With Us Teams community (central hub for announcements, readiness support, questions, file sharing, and peer collaboration).
+4. **Teams community access** — Participants are added to the Build with us Teams community (central hub for announcements, readiness support, questions, file sharing, and peer collaboration).
 
 ---
 
@@ -86,7 +86,7 @@ Each weekly meeting follows a standard agenda:
 
 ## Phase 7: The Event — Day 2 (9:00 AM – 3:00 PM)
 
-> Focus: Build software with AI as a teammate using GitHub Copilot and VS Code.
+> Focus: Build software with AI assistance using GitHub Copilot and VS Code.
 
 36. **Set up development environment** — Confirm VS Code, Python, and GitHub Copilot are working.
 37. **Connect the agent** — Integrate the Day 1 agent into a simple application experience.

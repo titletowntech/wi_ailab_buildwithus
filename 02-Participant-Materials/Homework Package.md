@@ -1,6 +1,6 @@
-# Build With Us: AI as a Teammate — Homework Package
+# Build with us: Support and Knowledge Base for Beginners — Homework Package
 
-Welcome to Build With Us! Before the event, each organization completes this homework so you arrive ready to build — not set up. Your progress will be reviewed together during the weekly readiness meetings, where we help each other clear any blockers.
+Welcome to Build with us: Support and Knowledge Base for Beginners! Before the event, each organization completes this homework so you arrive ready to build — not set up. Your progress will be reviewed together during the weekly readiness meetings, where we help each other clear any blockers.
 
 > **The goal:** If the event started tomorrow, your team could begin building within 30 minutes.
 
@@ -11,13 +11,13 @@ Welcome to Build With Us! Before the event, each organization completes this hom
 1. Work through the three parts below: **Business Readiness**, **Technical Readiness**, and **Pre-Skilling**.
 2. Fill in the two worksheets (links below).
 3. Bring your status and any blockers to each weekly readiness meeting.
-4. Post questions and share discoveries in the Build With Us Teams community.
+4. Post questions and share discoveries in the Build with us Teams community.
 
 ---
 
 ## Part 1: Business Readiness
 
-Define a Technical Support or Knowledge Base use case using the [Business Readiness Worksheet](Documents/Business%20Readiness%20Worksheet.md).
+Define a Technical Support or Knowledge Base use case using the [Business Readiness Worksheet](Business%20Readiness%20Worksheet.md).
 
 Complete the following:
 
@@ -33,7 +33,7 @@ Complete the following:
 
 ## Part 2: Technical Readiness
 
-Get your environment ready using the [Technical Readiness Worksheet](Documents/Technical%20Readiness%20Worksheet.md). Step-by-step help for each item is on the pre-skilling site.
+Get your environment ready using the [Technical Readiness Worksheet](Technical%20Readiness%20Worksheet.md). Step-by-step help for each item is on the pre-skilling site.
 
 Complete the following:
 

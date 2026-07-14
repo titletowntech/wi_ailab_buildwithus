@@ -3,10 +3,10 @@
 Copy everything in the fenced block below and send it to the pre-skilling website project. It only specifies **content** — the other project already has the style, layout, and navigation conventions to apply.
 
 ```text
-Add a new technical readiness page to the Microsoft AI Co-Innovation Lab pre-skilling website for the Build With Us event: "Azure AI Foundry Readiness."
+Add a new technical readiness page to the Microsoft AI Co-Innovation Lab pre-skilling website for the Build with us: Support and Knowledge Base for Beginners event: "Azure AI Foundry Readiness."
 
 Context:
-Build With Us is a hands-on event where companies build Technical Support and Knowledge Base agents in Azure AI Foundry on Day 1, then use GitHub Copilot and VS Code on Day 2 to build a small app that uses the agent. Attendees are not all senior developers — many are business/technical users, citizen builders, junior developers, or IT admins who may be new to Azure.
+Build with us: Support and Knowledge Base for Beginners is a hands-on event where companies build Technical Support and Knowledge Base agents in Azure AI Foundry on Day 1, then use GitHub Copilot and VS Code on Day 2 to build a small app that uses the agent. Attendees are not all senior developers — many are business/technical users, citizen builders, junior developers, or IT admins who may be new to Azure.
 
 Why this page is needed:
 The site already has an Azure Subscription readiness page, but nothing that confirms a participant can actually get into Azure AI Foundry and open a project. Having an Azure subscription is not the same as having Foundry access. This page closes that gap. Assume that if a participant can open a Foundry project, they have access to at least a minimal model — so this page does NOT need to cover model deployment permissions.
@@ -24,7 +24,7 @@ Page content to create — "Azure AI Foundry Readiness":
    - You work inside "projects," which keep your agent work organized.
    - You don't need to understand how it works underneath — you just need to be able to sign in and open (or create) a project.
 
-2. Why you need it for Build With Us
+2. Why you need it for Build with us: Support and Knowledge Base for Beginners
    - On Day 1, the agent your team builds lives in an Azure AI Foundry project.
    - Confirming access before the event means you can start building right away instead of troubleshooting sign-in.
 

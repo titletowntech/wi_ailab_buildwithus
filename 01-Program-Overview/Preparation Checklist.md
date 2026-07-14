@@ -1,4 +1,4 @@
-# Build With Us: AI as a Teammate — Organizer Preparation Checklist
+# Build with us: Support and Knowledge Base for Beginners — Organizer Preparation Checklist
 
 An organizer's checklist of everything **I** need to do to prepare for and run the event — from setting up registration through final Go/No-Go and event-day logistics. Items already completed are checked.
 
@@ -6,15 +6,18 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 
 ## 1. Program Setup & Materials
 
-- [x] Define program scope (Technical Support & Knowledge Base agents only) — [README.md](README.md)
-- [x] Define the overall program flow (registration → kickoff → weekly meetings → Go/No-Go → event) — [README.md](README.md), [High Level Timeline.md](High%20Level%20Timeline.md)
-- [x] Create the Business Readiness Worksheet template — [Documents/Business Readiness Worksheet.md](Documents/Business%20Readiness%20Worksheet.md)
-- [x] Create the Technical Readiness Worksheet template — [Documents/Technical Readiness Worksheet.md](Documents/Technical%20Readiness%20Worksheet.md)
-- [x] Finalize the 2-day event agenda (Day 1: build & evaluate agent; Day 2: build app with Copilot) — [Day 1 Agenda.md](Day%201%20Agenda.md), [Day 2 Agenda.md](Day%202%20Agenda.md)
-- [x] Prepare the homework package to hand out at kickoff — [Homework Package.md](Homework%20Package.md)
-- [x] Prepare the pre-skilling package to hand out at kickoff — [Pre-Skilling Package.md](Pre-Skilling%20Package.md)
-- [ ] Prepare the Day 1 template application / lab materials
-- [ ] Prepare the Day 2 sample app / Copilot lab materials
+- [x] Define program scope (Technical Support & Knowledge Base agents only) — [README.md](../README.md)
+- [x] Define the overall program flow (registration → kickoff → weekly meetings → Go/No-Go → event) — [High Level Timeline.md](High%20Level%20Timeline.md)
+- [x] Create the Business Readiness Worksheet template — [Business Readiness Worksheet.md](../02-Participant-Materials/Business%20Readiness%20Worksheet.md)
+- [x] Create the Technical Readiness Worksheet template — [Technical Readiness Worksheet.md](../02-Participant-Materials/Technical%20Readiness%20Worksheet.md)
+- [x] Finalize the 2-day event agenda (Day 1: build & evaluate agent; Day 2: build app with Copilot) — [Day 1 Agenda.md](../03-Event-Agendas/Day%201%20Agenda.md), [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md)
+- [x] Prepare the homework package to hand out at kickoff — [Homework Package.md](../02-Participant-Materials/Homework%20Package.md)
+- [x] Prepare the pre-skilling package to hand out at kickoff — [Pre-Skilling Package.md](../02-Participant-Materials/Pre-Skilling%20Package.md)
+- [x] Create the Day 1 facilitator guide from the [Day 1 Agenda.md](../03-Event-Agendas/Day%201%20Agenda.md) — [Day 1 Facilitator Guide.md](../04-Facilitator-Guides/Day%201%20Facilitator%20Guide.md)
+- [x] Prepare the Day 1 guided-agent and good-vs-bad-data sample files — [Sample Files - Good](../05-Sample-Files/Sample%20Files%20-%20Good/), [Sample Files - Bad](../05-Sample-Files/Sample%20Files%20-%20Bad/)
+- [x] Write the Day 1 guided-agent prompt and test questions (should-work / should-not-work) — [Day 1 Guided Agent Kit.md](../04-Facilitator-Guides/Day%201%20Guided%20Agent%20Kit.md)
+- [x] Prepare the Day 2 template application — using the Wisconsin AI Co-Innovation Lab Prototype Template ([titletowntech/wi_ailab_prototype_template](https://github.com/titletowntech/wi_ailab_prototype_template))
+- [ ] Create the Day 2 facilitator guide from the [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md)
 
 ---
 
@@ -37,7 +40,7 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [ ] Define acceptance criteria for organizations
 - [ ] Review and approve applicants into the program
 - [ ] Send acceptance / onboarding communications
-- [ ] Set up the Build With Us Teams community
+- [ ] Set up the Build with us Teams community
 - [ ] Add approved organizations to the Teams community
 - [ ] Configure Teams channels (announcements, readiness support, Q&A, file sharing, blocker tracking)
 
@@ -58,7 +61,7 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 ## 5. Weekly Readiness Meetings (Weeks 1–4)
 
 - [ ] Schedule the 4 weekly readiness meetings
-- [x] Prepare a standard agenda (pre-skilling, technical, business, collective learning) — [Weekly Readiness Meeting Agenda.md](Weekly%20Readiness%20Meeting%20Agenda.md)
+- [x] Prepare a standard agenda (pre-skilling, technical, business, collective learning) — [Weekly Readiness Meeting Agenda.md](../04-Facilitator-Guides/Weekly%20Readiness%20Meeting%20Agenda.md)
 - [ ] Track each organization's pre-skilling progress
 - [ ] Track each organization's technical readiness status
 - [ ] Track each organization's business readiness status
