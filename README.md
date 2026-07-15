@@ -46,11 +46,12 @@ See the full step-by-step [High Level Timeline](01-Program-Overview/High%20Level
 
 ### If you're an organizer
 1. Read this README for the full picture.
-2. Open the [Preparation Checklist](01-Program-Overview/Preparation%20Checklist.md) and work top to bottom.
-3. Stand up the community with the [Teams Community Setup Guide](01-Program-Overview/Teams%20Community%20Setup%20Guide.md).
-4. Use the [Weekly Readiness Meeting Agenda](04-Facilitator-Guides/Weekly%20Readiness%20Meeting%20Agenda.md) to run each check-in.
-5. Run **Day 1** with the [Day 1 Facilitator Guide](04-Facilitator-Guides/Day%201%20Facilitator%20Guide.md) and [Day 1 Guided Agent Kit](04-Facilitator-Guides/Day%201%20Guided%20Agent%20Kit.md) (alongside the [Day 1 Agenda](03-Event-Agendas/Day%201%20Agenda.md)).
-6. Run **Day 2** with the [Day 2 Facilitator Guide](04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md), [Day 2 Guided Agent Kit](04-Facilitator-Guides/Day%202%20Guided%20Agent%20Kit.md), and [Copilot 101 handout](04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md) (alongside the [Day 2 Agenda](03-Event-Agendas/Day%202%20Agenda.md)).
+2. Plan your dates with the [Event Planning Timeline Worksheet](01-Program-Overview/Event%20Planning%20Timeline%20Worksheet.md) (work backward from the event date).
+3. Open the [Preparation Checklist](01-Program-Overview/Preparation%20Checklist.md) and work top to bottom.
+4. Stand up the community with the [Teams Community Setup Guide](01-Program-Overview/Teams%20Community%20Setup%20Guide.md).
+5. Use the [Weekly Readiness Meeting Agenda](04-Facilitator-Guides/Weekly%20Readiness%20Meeting%20Agenda.md) to run each check-in.
+6. Run **Day 1** with the [Day 1 Facilitator Guide](04-Facilitator-Guides/Day%201%20Facilitator%20Guide.md) and [Day 1 Guided Agent Kit](04-Facilitator-Guides/Day%201%20Guided%20Agent%20Kit.md) (alongside the [Day 1 Agenda](03-Event-Agendas/Day%201%20Agenda.md)).
+7. Run **Day 2** with the [Day 2 Facilitator Guide](04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md), [Day 2 Guided Agent Kit](04-Facilitator-Guides/Day%202%20Guided%20Agent%20Kit.md), and [Copilot 101 handout](04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md) (alongside the [Day 2 Agenda](03-Event-Agendas/Day%202%20Agenda.md)).
 
 ### Facilitator guides & agent kits
 
@@ -74,6 +75,7 @@ The run-the-day materials live in [04-Facilitator-Guides/](04-Facilitator-Guides
 |----------|---------|----------|
 | [README.md](README.md) | Project overview and starting point (this file) | Everyone |
 | [High Level Timeline.md](01-Program-Overview/High%20Level%20Timeline.md) | Chronological step-by-step timeline, registration → event | Everyone |
+| [Event Planning Timeline Worksheet.md](01-Program-Overview/Event%20Planning%20Timeline%20Worksheet.md) | Fill-in worksheet to plan all key dates backward from the event date | Organizers |
 | [Preparation Checklist.md](01-Program-Overview/Preparation%20Checklist.md) | Organizer's end-to-end checklist for running the event | Organizers |
 | [Teams Community Setup Guide.md](01-Program-Overview/Teams%20Community%20Setup%20Guide.md) | How to set up and configure the Teams community (with AI ideas) | Organizers |
 | [Homework Package.md](02-Participant-Materials/Homework%20Package.md) | Pre-event homework: business readiness, technical setup, pre-skilling | Participants |

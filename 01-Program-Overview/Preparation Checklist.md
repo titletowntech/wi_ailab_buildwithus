@@ -8,6 +8,7 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 
 - [x] Define program scope (Technical Support & Knowledge Base agents only) — [README.md](../README.md)
 - [x] Define the overall program flow (registration → kickoff → weekly meetings → Go/No-Go → event) — [High Level Timeline.md](High%20Level%20Timeline.md)
+- [x] Plan the event timeline and all key dates (work backward from the event date) — [Event Planning Timeline Worksheet.md](Event%20Planning%20Timeline%20Worksheet.md)
 - [x] Create the Business Readiness Worksheet template — [Business Readiness Worksheet.md](../02-Participant-Materials/Business%20Readiness%20Worksheet.md)
 - [x] Create the Technical Readiness Worksheet template — [Technical Readiness Worksheet.md](../02-Participant-Materials/Technical%20Readiness%20Worksheet.md)
 - [x] Finalize the 2-day event agenda (Day 1: build & evaluate agent; Day 2: build app with Copilot) — [Day 1 Agenda.md](../03-Event-Agendas/Day%201%20Agenda.md), [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md)

@@ -79,3 +79,63 @@
 .ms-logo .sq2 { background: #7FBA00; }
 .ms-logo .sq3 { background: #00A4EF; }
 .ms-logo .sq4 { background: #FFB900; }
+
+/* Interactive planner worksheet */
+.planner-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 1.5rem 0 2rem;
+}
+.planner-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.planner-field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ms-blue-light);
+}
+.planner-field input,
+.planner-field select,
+.learn-body .planner-tbl input,
+.learn-body .planner-tbl select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.planner-field input[type="date"] { color-scheme: dark; }
+.planner-tbl input, .planner-tbl select { width: 100%; }
+.planner-date { color: var(--text-accent); font-weight: 600; white-space: nowrap; }
+.planner-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.5rem 0 1rem; }
+.planner-btn {
+  background: linear-gradient(135deg, var(--ms-blue), var(--ms-blue-dark));
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.planner-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(80, 230, 255, 0.4);
+  color: var(--ms-blue-light);
+}
+.planner-output textarea {
+  width: 100%;
+  min-height: 340px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text-primary);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Consolas', 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.planner-hint { font-size: 0.9rem; color: var(--text-secondary); font-style: italic; }
