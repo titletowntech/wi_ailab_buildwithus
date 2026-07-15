@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build with us: Support and Knowledge Base for Beginners — Day 1 Guided Agent Kit</title>
+  <link rel="stylesheet" href="https://titletowntech.github.io/wi_ailab_labwebsite/styles.css" />
+  <link rel="stylesheet" href="../site-extras.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="ms-logo"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span><span class="sq4"></span></div>
+      <div class="header-title">AI Co-Innovation Lab - Wisconsin</div>
+    </div>
+  </header>
+
+  <section class="learn-hero">
+    <div class="learn-hero-inner">
+      <a class="back-link" href="../index.html">&larr; All documents</a>
+      <div class="term-name">Facilitator Guides</div>
+      <h1>Build with us: Support and Knowledge Base for Beginners — Day 1 Guided Agent Kit</h1>
+      <div class="learn-meta">
+        <span>Build with us: Support &amp; Knowledge Base for Beginners</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="learn-body">
+<p>Everything the facilitator needs to run the <strong>guided agent</strong> in Step 4 of the <a href="Day%201%20Facilitator%20Guide.html">Day 1 Facilitator Guide</a>: the agent prompt, the test questions (should-work and should-not-work), and the good-vs-bad-data demo.</p>
+<p>The guided agent is an <strong>Adventure Works</strong> bicycle technical-support assistant, grounded in the troubleshooting articles in <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a> (documents TS-001 through TS-020).</p>
+<blockquote>
+<p>Facilitator note: paste the prompt below into the agent's <strong>instructions</strong>, upload the <strong><a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a></strong> set as the agent's knowledge/files, then work through the questions with the room.</p>
+</blockquote>
+<hr />
+<h2 id="1-guided-agent-prompt">1. Guided Agent Prompt</h2>
+<p>Copy everything in the fenced block into the agent's instructions field.</p>
+<pre><code class="language-text">You are the Adventure Works Technical Support Assistant. You help riders and shop
+staff troubleshoot and repair Adventure Works bicycles — including the Trailblazer MTB,
+Summit Trail, City Cruiser, Velocity Road, PowerRide e-Bike, and City Cruiser-E.
+
+YOUR KNOWLEDGE
+- Answer only from the Adventure Works technical support documents provided to you
+  (the TS-001 through TS-020 troubleshooting guides).
+- These documents cover symptoms, likely causes, step-by-step customer fixes,
+  technician references, and torque specifications for common bicycle issues.
+- If the answer is not in the provided documents, say so plainly. Do not guess,
+  invent steps, or use general knowledge to fill gaps.
+
+HOW TO ANSWER
+- Start with the most likely cause, then give clear, numbered steps a home mechanic
+  can follow. Use plain, friendly language and avoid unnecessary jargon.
+- When a document lists a specific value (torque spec, tire pressure, clearance,
+  pad thickness), quote it exactly. Do not round or estimate.
+- Reference the source document number when helpful (for example, &quot;see TS-001&quot;).
+- If a question could relate to several issues, ask a short clarifying question
+  before giving a long answer.
+
+SAFETY
+- Brakes, e-bike batteries, and chargers are safety-critical. Always include the
+  relevant safety warnings from the documents.
+- Never advise mixing brake fluids, using a non-manufacturer charger, or riding a
+  bike with unreliable brakes.
+- When the documents say to visit a service center, tell the rider to do so and
+  explain why.
+
+STAYING IN SCOPE
+- You only help with Adventure Works bicycle troubleshooting and repair.
+- If asked about pricing, warranty, purchasing, store hours, appointments, order
+  status, non-Adventure Works products, other vehicles, or anything unrelated,
+  politely explain that you can only help with Adventure Works bicycle
+  troubleshooting from the support guides, and suggest they contact the shop for
+  those questions.
+- You cannot take actions such as booking service, placing orders, or looking up
+  accounts. You provide troubleshooting guidance only.
+</code></pre>
+<hr />
+<h2 id="2-test-questions-should-work">2. Test Questions — Should Work</h2>
+<p>These are all answerable from <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>. Use them to show the agent giving accurate, grounded answers. The document each draws from is noted for the facilitator.</p>
+<ol>
+<li>My brake lever pulls almost to the handlebar before the bike slows down. What should I check first? <em>(TS-001)</em></li>
+<li>What's the correct torque for the disc brake caliper mount bolts? <em>(TS-001 — 6–8 N·m)</em></li>
+<li>Which Adventure Works models does the spongy-brakes guide apply to? <em>(TS-001)</em></li>
+<li>My disc brakes squeal and rub. How do I fix it? <em>(TS-002)</em></li>
+<li>My gears won't shift onto the largest cog. What's likely wrong? <em>(TS-004 — limit screws)</em></li>
+<li>How much should I turn the barrel adjuster when indexing gears? <em>(TS-004 — a quarter turn at a time)</em></li>
+<li>How do I fix a flat tire and replace the tube? <em>(TS-005)</em></li>
+<li>What tire pressure should I run for a 2.3-inch mountain bike tire? <em>(TS-005 — 22–30 psi)</em></li>
+<li>My chain keeps dropping off the chainring. How do I stop that? <em>(TS-008)</em></li>
+<li>My e-bike won't power on. What are the first steps? <em>(TS-019)</em></li>
+<li>How should I store my e-bike battery for the winter? <em>(TS-019 — ~40–60% charge, cool and dry)</em></li>
+<li>Why does my e-bike lose range in cold weather? <em>(TS-019)</em></li>
+</ol>
+<hr />
+<h2 id="3-test-questions-should-not-work">3. Test Questions — Should NOT Work</h2>
+<p>These are outside the knowledge base. Use them to show the agent correctly declining and staying in scope — this is the <em>right</em> behavior, not a failure.</p>
+<ol>
+<li>How much does a new brake caliper cost? <em>(pricing — not in the documents)</em></li>
+<li>What's the warranty on my Trailblazer MTB? <em>(warranty — not in the documents)</em></li>
+<li>Can you book a service appointment for me next Tuesday? <em>(action the agent can't take)</em></li>
+<li>Which bike should I buy for commuting to work? <em>(sales recommendation, not troubleshooting)</em></li>
+<li>What are your store hours and location? <em>(not in the knowledge base)</em></li>
+<li>How do I change the brake pads on my motorcycle? <em>(different vehicle)</em></li>
+<li>How do I fix the brakes on my car? <em>(different vehicle)</em></li>
+<li>What's the weather like for a ride today? <em>(unrelated)</em></li>
+<li>Write me a short poem about mountain biking. <em>(off-task)</em></li>
+<li>What's the status of my online order? <em>(account/order lookup, not supported)</em></li>
+</ol>
+<hr />
+<h2 id="4-good-data-vs-bad-data-demo">4. Good Data vs. Bad Data Demo</h2>
+<p>Show the same question against two knowledge sets to prove the point: <strong>the agent is only as good as the documents behind it.</strong></p>
+<p><strong>Setup:</strong> Keep the prompt the same. First run the agent with <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>, then swap in <a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a> and ask the identical question.</p>
+<p><strong>Recommended demo question:</strong></p>
+<blockquote>
+<p>"My brakes feel soft and the lever pulls to the bar. What should I do, and what torque should I use on the caliper bolts?"</p>
+</blockquote>
+<p><strong>With the good data (<a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>):</strong> the agent gives clear, ordered steps (inspect pads, check pad-to-rim gap, clean the rotor, take up cable slack, re-test at walking pace), the exact spec (<strong>disc caliper mount bolts 6–8 N·m</strong>), and the correct safety warnings — because <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">TS-001</a> is complete, structured, and specific.</p>
+<p><strong>With the bad data (<a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a>):</strong> the answer falls apart. The matching source files are unusable —
+- <code>BAD-001</code> is vague, uncertain notes ("bleed it or dont… idk it depends"),
+- <code>BAD-002</code> is an old forum thread with <strong>no accepted answer</strong>,
+- <code>BAD-005</code> is a <strong>DRAFT with "TODO" placeholders</strong> and no steps.</p>
+<p>The agent can't provide torque specs or reliable steps, hedges, or has to say it doesn't know.</p>
+<p><strong>The takeaway to land with the room:</strong></p>
+<blockquote>
+<p>Same model, same prompt — only the knowledge changed. Clean, complete, well-structured documents produce a trustworthy agent. Vague notes, forum threads, and unfinished drafts produce an untrustworthy one. This is why your Day 2 (and real-world) success starts with good source material.</p>
+</blockquote>
+  </article>
+
+  <footer>
+    <p>Microsoft AI Co-Innovation Lab — Wisconsin &nbsp;·&nbsp; Build with us: Support and Knowledge Base for Beginners</p>
+  </footer>
+
+</body>
+</html>

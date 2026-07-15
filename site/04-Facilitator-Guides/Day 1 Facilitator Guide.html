@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build with us: Support and Knowledge Base for Beginners — Day 1 Facilitator Guide</title>
+  <link rel="stylesheet" href="https://titletowntech.github.io/wi_ailab_labwebsite/styles.css" />
+  <link rel="stylesheet" href="../site-extras.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="ms-logo"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span><span class="sq4"></span></div>
+      <div class="header-title">AI Co-Innovation Lab - Wisconsin</div>
+    </div>
+  </header>
+
+  <section class="learn-hero">
+    <div class="learn-hero-inner">
+      <a class="back-link" href="../index.html">&larr; All documents</a>
+      <div class="term-name">Facilitator Guides</div>
+      <h1>Build with us: Support and Knowledge Base for Beginners — Day 1 Facilitator Guide</h1>
+      <div class="learn-meta">
+        <span>Build with us: Support &amp; Knowledge Base for Beginners</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="learn-body">
+<p>A detailed, step-by-step plan for the facilitator to run Day 1. Work through it in order, but let the day breathe: the schedule is a guide, not a stopwatch. When a good question or discovery opens a useful tangent, follow it — then bring the room back to the current step.</p>
+<p><strong>Day 1 focus:</strong> Each company builds and evaluates a Technical Support / Knowledge Base agent in Azure AI Foundry — first a guided agent together, then one using their own documents.</p>
+<p>Companion documents: <a href="../03-Event-Agendas/Day%201%20Agenda.html">Day 1 Agenda.md</a> · <a href="../02-Participant-Materials/Business%20Readiness%20Worksheet.html">Business Readiness Worksheet</a> · <a href="../02-Participant-Materials/Technical%20Readiness%20Worksheet.html">Technical Readiness Worksheet</a></p>
+<p>Sample materials: <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a> (a clean, well-structured bike-troubleshooting knowledge base) and <a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a> (the same topics as messy drafts, duplicates, and off-format documents) — used for the guided agent and the good-vs-bad-data demo.</p>
+<p>Guided agent materials: the agent prompt, test questions, and the good-vs-bad-data demo are in the <a href="Day%201%20Guided%20Agent%20Kit.html">Day 1 Guided Agent Kit</a>.</p>
+<hr />
+<h2 id="how-to-use-this-guide">How to Use This Guide</h2>
+<ul>
+<li><strong>Move step by step.</strong> Each section below is a stop on the path. Finish one before moving to the next.</li>
+<li><strong>Not time-bound.</strong> The agenda has suggested times, but the day progresses at whatever pace it goes. Don't rush a step that's landing well; don't linger on one that's done.</li>
+<li><strong>Allow tangents.</strong> Real questions from the room are where the learning happens. Follow a worthwhile tangent, capture anything off-topic in a "parking lot," and return to the step you left.</li>
+<li><strong>Protect the group.</strong> Never stall the whole room for one blocked team. Hand blockers to the escalation facilitator and keep the group moving.</li>
+<li><strong>Watch for the through-line.</strong> Everything today reinforces one idea: <em>better knowledge and clearer instructions produce a better agent.</em></li>
+</ul>
+<hr />
+<h2 id="facilitator-roles">Facilitator Roles</h2>
+<p>If you have a team, split these roles. If you're running it solo, keep the order the same and lean on the group to help each other.</p>
+<ul>
+<li><strong>Lead facilitator</strong> — Owns pacing and transitions, opens and closes each step, leads demos and discussion, decides when to follow a tangent and when to move on.</li>
+<li><strong>Technical facilitators</strong> — Circulate during hands-on steps, help with Foundry, uploads, prompts, and testing; surface repeated issues so the lead can address the whole room.</li>
+<li><strong>Escalation facilitator</strong> — Owns access and environment blockers so they don't slow the room; pulls blocked participants aside; tracks unresolved issues in Teams.</li>
+<li><strong>Room / ops support</strong> — Wi-Fi, check-in, Teams and file sharing, breaks, and logistics.</li>
+</ul>
+<hr />
+<h2 id="before-the-day-starts">Before the Day Starts</h2>
+<ul>
+<li>☐ Room, Wi-Fi, and power confirmed; Teams channel open and ready for file sharing.</li>
+<li>☐ Your own Foundry project open and working — you will demo from it.</li>
+<li>☐ The <strong>finished guided agent</strong> ready to show as the "destination" before anyone builds.</li>
+<li>☐ The <strong>guided agent materials</strong> ready to share — prompt, test questions, and demo in the <a href="Day%201%20Guided%20Agent%20Kit.html">Day 1 Guided Agent Kit</a>; sample file set in <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>.</li>
+<li>☐ The <strong>good data</strong> and <strong>bad data</strong> file sets ready for the data-quality demo (<a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a> and <a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a>).</li>
+<li>☐ Predefined test questions ready — ones that <em>should</em> work and ones that <em>should not</em> (see the <a href="Day%201%20Guided%20Agent%20Kit.html">Day 1 Guided Agent Kit</a>).</li>
+<li>☐ A shared blocker tracker open (Teams or a simple list) with columns for issue, owner, and status.</li>
+</ul>
+<hr />
+<h2 id="step-1-tech-setup">Step 1 · Tech Setup</h2>
+<p><strong>Goal:</strong> Everyone is connected and can open a Foundry project before any content begins.</p>
+<p>Do this:
+1. Welcome people as they arrive and point them to Wi-Fi and the Teams channel.
+2. Ask each participant to sign in to Azure and open Azure AI Foundry.
+3. Confirm each person can <strong>open (or create) a Foundry project</strong> — this is the real readiness check.
+4. Technical and escalation facilitators circulate to clear access issues immediately.</p>
+<p>Watch for:
+- "I can sign in but see no subscription" → escalation facilitator validates account / tenant / subscription.
+- Wrong account or tenant → get them into the account they'll use for the lab.
+- Can't open a project → work it as a red blocker so it doesn't surface later.</p>
+<p>Move on when: most of the room can open a Foundry project. Don't hold the whole group for one or two stragglers — hand those to escalation and begin.</p>
+<hr />
+<h2 id="step-2-event-overview">Step 2 · Event Overview</h2>
+<p><strong>Goal:</strong> Everyone understands what they're building today and why it matters.</p>
+<p>Do this:
+1. State the goal plainly: <em>today we each build a Technical Support / Knowledge Base agent grounded in real documents.</em>
+2. <strong>Show the finished guided agent.</strong> Ask it a question it answers well, and one it correctly declines. Seeing the destination first makes the build make sense.
+3. Give a quick tour of how the day flows: build a guided agent together → see how data quality changes results → build your own agent → share.
+4. Set the tone: this is hands-on and collaborative; questions are welcome; we help each other.</p>
+<p>Tangent to allow: if people ask "what can and can't an agent like this do?" — lean in briefly. It sets expectations and pays off all day. Park deep architecture or production questions for later.</p>
+<p>Move on when: the room can describe, in a sentence, what they're building and what "good" looks like.</p>
+<hr />
+<h2 id="step-3-introductions">Step 3 · Introductions</h2>
+<p><strong>Goal:</strong> Everyone learns from one another's use cases and the room warms up.</p>
+<p>Do this:
+1. Go around the room. Each company shares, briefly:
+   - Who they are
+   - The support or knowledge problem they want to solve
+   - One example question they'd love their agent to answer
+2. Keep it moving — a couple of sentences each. Note interesting overlaps out loud so teams see shared challenges.</p>
+<p>Watch for: a team whose use case is too broad or not a support/knowledge fit. Note it gently now; you'll help them narrow it in Step 6.</p>
+<p>Move on when: everyone has shared and the room feels connected.</p>
+<hr />
+<h2 id="step-4-create-the-1st-foundry-agent-guided">Step 4 · Create the 1st Foundry Agent (Guided)</h2>
+<p><strong>Goal:</strong> Everyone builds the <em>same</em> agent together, using materials you provide, and sees how to test and deploy it. This is the anchor of the day — go slow enough that everyone succeeds.</p>
+<h3 id="4a-build-the-guided-agent-together">4a. Build the guided agent together</h3>
+<ol>
+<li>Share the <strong>provided prompt</strong> (from the <a href="Day%201%20Guided%20Agent%20Kit.html">Day 1 Guided Agent Kit</a>) and walk through what each part of it does and why.</li>
+<li>Have participants upload <strong>your</strong> sample file set (<a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>).</li>
+<li>Build the agent step by step. Narrate what you're doing and pause so the room can catch up.</li>
+<li>Do frequent check-ins: "Thumbs up when your agent is created." Wait for the room before advancing.</li>
+</ol>
+<h3 id="4b-test-the-agent">4b. Test the agent</h3>
+<ol>
+<li>Run the predefined questions that <strong>should</strong> work (see the <a href="Day%201%20Guided%20Agent%20Kit.html">Day 1 Guided Agent Kit</a>). Point out <em>why</em> the answers are good — they're grounded in the documents.</li>
+<li>Run the predefined questions that <strong>should not</strong> work. Show the agent declining or staying within its knowledge, and explain why that's the <em>correct</em> behavior.</li>
+<li>Emphasize the habit: <em>always test both what should and should not work.</em></li>
+</ol>
+<h3 id="4c-deploy-the-agent">4c. Deploy the agent</h3>
+<ol>
+<li>Walk the room through deploying (or preparing to deploy) the agent.</li>
+<li>Confirm each team has a working, deployed guided agent before moving on.</li>
+</ol>
+<h3 id="4d-best-practices-good-data-vs-bad-data">4d. Best practices — good data vs. bad data</h3>
+<ol>
+<li>Start with the <strong>good data</strong> set (<a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>) and ask a question; note the quality of the answer.</li>
+<li>Switch to the <strong>bad data</strong> set (<a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a>) and ask the <em>same</em> question; show how the answer degrades.</li>
+<li>Draw the lesson explicitly: <em>the agent is only as good as the knowledge and instructions you give it.</em> This is the single most important takeaway of the day.</li>
+</ol>
+<p>Watch for:
+- Vague answers → usually a document-quality or prompt-instruction issue; use it as a teaching moment.
+- A team answering unsupported questions → tighten the instructions and re-test the "should not" examples.
+- Teams falling behind → keep them on the guided agent; it's fine to skip optional refinements.</p>
+<p>Tangent to allow: "how would I make it say X instead?" is a great prompt-and-grounding discussion. Follow it briefly, then return.</p>
+<p>Move on when: every team has built, tested, deployed the guided agent, and has seen the good-vs-bad data demo.</p>
+<hr />
+<h2 id="step-5-lunch-working-break">Step 5 · Lunch / Working Break</h2>
+<p>Use this as a buffer. Technical and escalation facilitators stay available to unblock any team that's behind so everyone starts the afternoon on even footing.</p>
+<hr />
+<h2 id="step-6-create-the-2nd-agent-their-own">Step 6 · Create the 2nd Agent (Their Own)</h2>
+<p><strong>Goal:</strong> Each company applies what they learned to their own use case, with one-on-one coaching. This is where the value becomes real for them.</p>
+<p>Do this:
+1. Point teams back to their <a href="../02-Participant-Materials/Business%20Readiness%20Worksheet.html">Business Readiness Worksheet</a> — problem, outcome, example questions, documents.
+2. Have them upload <strong>their own</strong> files.
+3. Have them write <strong>their own</strong> prompt. Encourage reusing the structure of the guided prompt as a starting point.
+4. Have them <strong>test</strong> deliberately:
+   - Which questions <strong>should</strong> work?
+   - Which questions <strong>should not</strong> work?
+5. Have them iterate — adjust documents or instructions based on what the tests reveal.
+6. Have them <strong>deploy</strong> (or prepare to deploy) their agent.</p>
+<p>Facilitators: coach one-on-one. Circulate constantly. Reinforce the good-vs-bad-data lesson when you see it play out in their own results.</p>
+<p>Watch for:
+- Poor or missing data → suggest a narrower scenario or a smaller, cleaner document set so they still get a win.
+- Scope too broad → help them focus on one clear support/knowledge question they can nail.
+- A team stuck on setup → escalate so their build time isn't lost.</p>
+<p>Move on when: each team has a working agent of their own (even a modest one) and has identified at least one thing they'd improve.</p>
+<hr />
+<h2 id="step-7-demos">Step 7 · Demos</h2>
+<p><strong>Goal:</strong> Teams share what they built and learn from each other. Demos are optional but strongly encouraged.</p>
+<p>Do this:
+1. Invite companies to give a short demo, each covering:
+   - <strong>Problem</strong> — what they set out to solve
+   - <strong>Solution</strong> — what they built
+   - <strong>Lessons</strong> — what they learned
+2. Keep them short so several teams can share.
+3. Call out patterns across demos — especially where better documents or clearer instructions produced better results.</p>
+<p>Move on when: a good cross-section of teams has shared and the room has heard varied approaches.</p>
+<hr />
+<h2 id="step-8-prep-for-day-2-wrap-up">Step 8 · Prep for Day 2 &amp; Wrap-Up</h2>
+<p><strong>Goal:</strong> Everyone is set up and motivated for Day 2, where they'll build a small app around their agent using GitHub Copilot.</p>
+<p>Do this:
+1. <strong>Preview Day 2.</strong> Show briefly what's possible with code — connecting the agent into a simple application using GitHub Copilot and VS Code.
+2. <strong>Confirm Day 2 setup.</strong> Remind participants to have <strong>VS Code</strong> and <strong>GitHub Copilot</strong> installed and working, and to have the <strong>template app</strong> downloaded (<a href="https://github.com/titletowntech/wi_ailab_prototype_template">titletowntech/wi_ailab_prototype_template</a>).
+3. Flag any setup gaps now so they can be resolved before Day 2 — hand these to the escalation facilitator.
+4. <strong>Recap the day</strong> and take questions.
+5. Close with the through-line below.</p>
+<hr />
+<h2 id="blocker-model-green-yellow-red">Blocker Model (Green / Yellow / Red)</h2>
+<p>Use this all day to keep the room moving:</p>
+<ul>
+<li><strong>Green</strong> — Team is progressing normally.</li>
+<li><strong>Yellow</strong> — Minor issue, but they can continue. A technical facilitator helps in the flow.</li>
+<li><strong>Red</strong> — Team is blocked and cannot progress. Escalation facilitator takes it aside; capture it in the tracker; rejoin the team to the main flow when ready.</li>
+</ul>
+<p>Rules: don't stop the whole room for one red blocker; keep every blocker visible with an owner; follow up on anything unresolved before Day 2.</p>
+<p>Common issues and responses:</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can't access Azure</td>
+<td>Escalation support; validate account / tenant / subscription</td>
+</tr>
+<tr>
+<td>Can't open Foundry</td>
+<td>Validate access, browser, account, tenant, permissions</td>
+</tr>
+<tr>
+<td>Can't upload files</td>
+<td>Check file type, location, browser permissions</td>
+</tr>
+<tr>
+<td>Agent answers vaguely</td>
+<td>Review document quality and prompt instructions</td>
+</tr>
+<tr>
+<td>Agent answers unsupported questions</td>
+<td>Tighten instructions and re-test the "should not" examples</td>
+</tr>
+<tr>
+<td>Team has weak data</td>
+<td>Suggest sample files or a narrower scenario</td>
+</tr>
+<tr>
+<td>Team is behind</td>
+<td>Keep them on the guided agent; skip optional refinements</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="end-of-day-facilitator-checklist">End-of-Day Facilitator Checklist</h2>
+<p>Before closing, confirm:</p>
+<ul>
+<li>☐ Every team built, tested, and deployed the <strong>guided</strong> agent.</li>
+<li>☐ Every team saw the <strong>good data vs. bad data</strong> demo.</li>
+<li>☐ Every team started or completed <strong>their own</strong> agent.</li>
+<li>☐ Every team tested questions that <strong>should</strong> and <strong>should not</strong> work.</li>
+<li>☐ Every team identified at least one improvement area.</li>
+<li>☐ Teams shared or prepared a short demo.</li>
+<li>☐ Day 2 setup requirements were reviewed (VS Code, GitHub Copilot, template app).</li>
+<li>☐ Open blockers are captured with an owner for follow-up before Day 2.</li>
+</ul>
+<hr />
+<h2 id="closing-through-line">Closing Through-Line</h2>
+<p>Use or adapt this to close the day:</p>
+<blockquote>
+<p>Today we built the foundation: a knowledge-driven agent that helps people find answers from trusted information. A good agent isn't just about the model — it depends on a clear use case, good source material, thoughtful instructions, and honest testing of what should and should not work. Tomorrow we build on this: we'll use GitHub Copilot and VS Code to wrap your agent in a simple app. That's where building with AI assistance becomes concrete — using AI to help you build software around the intelligence you created today.</p>
+</blockquote>
+  </article>
+
+  <footer>
+    <p>Microsoft AI Co-Innovation Lab — Wisconsin &nbsp;·&nbsp; Build with us: Support and Knowledge Base for Beginners</p>
+  </footer>
+
+</body>
+</html>

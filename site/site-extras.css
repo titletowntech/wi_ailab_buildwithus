@@ -1,0 +1,81 @@
+/* Extras for generated pages: elements the base stylesheet doesn't cover.
+   Uses the same CSS variables as the base stylesheet so it blends in. */
+
+/* Tables */
+.learn-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0 1.6rem;
+  font-size: 0.97rem;
+}
+.learn-body th,
+.learn-body td {
+  border: 1px solid var(--bg-card-border);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+.learn-body th {
+  background: rgba(0, 120, 212, 0.15);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+.learn-body td { color: var(--text-secondary); }
+.learn-body tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
+.learn-body table code { white-space: nowrap; }
+
+/* Fenced code blocks */
+.learn-body pre {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--bg-card-border);
+  border-left: 3px solid var(--ms-blue);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0 1.4rem;
+  overflow-x: auto;
+}
+.learn-body pre code {
+  display: block;
+  font-family: 'Consolas', 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* Blockquotes / callouts */
+.learn-body blockquote {
+  border-left: 4px solid var(--ms-blue);
+  background: linear-gradient(135deg, rgba(0, 120, 212, 0.10), rgba(0, 180, 216, 0.05));
+  border-radius: 8px;
+  padding: 1rem 1.4rem;
+  margin: 1.4rem 0;
+}
+.learn-body blockquote p { color: var(--text-primary); margin-bottom: 0.5rem; }
+.learn-body blockquote p:last-child { margin-bottom: 0; }
+
+/* Nested lists */
+.learn-body ul ul,
+.learn-body ul ol,
+.learn-body ol ul,
+.learn-body ol ol { margin: 0.5rem 0 0.5rem 0; }
+.learn-body ol { padding-left: 1.4rem; color: var(--text-secondary); }
+.learn-body ol li { font-size: 1.02rem; margin-bottom: 0.3rem; }
+
+/* Horizontal rule */
+.learn-body hr {
+  border: none;
+  border-top: 1px solid var(--bg-card-border);
+  margin: 2.2rem 0;
+}
+
+/* Microsoft 2x2 logo (no image dependency) */
+.ms-logo { display: grid; grid-template-columns: 11px 11px; gap: 3px; }
+.ms-logo span { display: block; width: 11px; height: 11px; }
+.ms-logo .sq1 { background: #F25022; }
+.ms-logo .sq2 { background: #7FBA00; }
+.ms-logo .sq3 { background: #00A4EF; }
+.ms-logo .sq4 { background: #FFB900; }

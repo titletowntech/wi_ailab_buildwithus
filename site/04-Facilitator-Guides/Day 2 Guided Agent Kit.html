@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build with us: Support and Knowledge Base for Beginners — Day 2 Guided Agent Kit</title>
+  <link rel="stylesheet" href="https://titletowntech.github.io/wi_ailab_labwebsite/styles.css" />
+  <link rel="stylesheet" href="../site-extras.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="ms-logo"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span><span class="sq4"></span></div>
+      <div class="header-title">AI Co-Innovation Lab - Wisconsin</div>
+    </div>
+  </header>
+
+  <section class="learn-hero">
+    <div class="learn-hero-inner">
+      <a class="back-link" href="../index.html">&larr; All documents</a>
+      <div class="term-name">Facilitator Guides</div>
+      <h1>Build with us: Support and Knowledge Base for Beginners — Day 2 Guided Agent Kit</h1>
+      <div class="learn-meta">
+        <span>Build with us: Support &amp; Knowledge Base for Beginners</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="learn-body">
+<p>Everything the facilitator needs to run the <strong>guided build</strong> in Step 4 of the <a href="Day%202%20Facilitator%20Guide.html">Day 2 Facilitator Guide</a>: the shared scenario, the connection recipe, an ordered build script with the exact Copilot prompts to use at each step, and test questions.</p>
+<p>The guided build continues yesterday's story: everyone wraps the <strong>Adventure Works</strong> bicycle support agent from Day 1 in a simple app using the <a href="https://github.com/titletowntech/wi_ailab_prototype_template">prototype template</a>, with GitHub Copilot doing the typing.</p>
+<p>Companion handout: <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 — Sample Markdown &amp; Prompt Examples</a>.</p>
+<blockquote>
+<p>Facilitator note: participants only ever edit a few files — <code>project_config.py</code>, <code>core/tools/example_tools.py</code>, <code>custom_tools.py</code>, and <code>app.py</code>. The <code>core/</code> and <code>ui/</code> folders are the shared framework and stay untouched.</p>
+</blockquote>
+<hr />
+<h2 id="0-connection-recipe-facilitator-provides">0. Connection Recipe (facilitator provides)</h2>
+<p>Have these ready so teams don't lose time on setup or authentication:</p>
+<ul>
+<li><strong>Template</strong> downloaded, VS Code open, GitHub Copilot signed in and working.</li>
+<li><strong><code>.env</code> values</strong> for the Foundry project:</li>
+<li><code>AZURE_FOUNDRY_ENDPOINT</code></li>
+<li><code>AZURE_FOUNDRY_API_KEY</code></li>
+<li><code>AZURE_AI_PROJECT_ENDPOINT</code></li>
+<li><strong>To connect the Day 1 agent</strong> (the Foundry agent runtime needs a real sign-in — the API key alone is <strong>not</strong> accepted), pre-stage a <strong>service principal</strong> and give teams:</li>
+<li><code>AZURE_TENANT_ID</code></li>
+<li><code>AZURE_CLIENT_ID</code></li>
+<li><code>AZURE_CLIENT_SECRET</code></li>
+<li>(The app registration needs the <strong>Azure AI Developer</strong> role on the Foundry project.)</li>
+<li><strong>The Day 1 agent name</strong> — the Adventure Works support agent each team deployed (set on the app's Settings page).</li>
+</ul>
+<hr />
+<h2 id="1-copy-the-template-and-run-the-baseline">1. Copy the Template and Run the Baseline</h2>
+<p>Get an unmodified app running on every screen first — a shared "it works" moment before any changes.</p>
+<ol>
+<li>Copy <code>projects/_template</code> to a new folder, e.g. <code>projects/adventure-works</code>.</li>
+<li>Copy <code>.env.example</code> to <code>.env</code> and fill in the values from the recipe above.</li>
+<li>Activate the virtual environment, then install and run:
+   <code>powershell
+   .\.venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   python app.py</code></li>
+<li>Open <code>http://localhost:5000</code> and confirm the app loads and the chat responds.</li>
+</ol>
+<blockquote>
+<p>Checkpoint: everyone sees a running app before moving on.</p>
+</blockquote>
+<hr />
+<h2 id="2-connect-the-day-1-agent">2. Connect the Day 1 Agent</h2>
+<p>Route the app's chat to the team's Day 1 Adventure Works agent.</p>
+<ol>
+<li>In the running app, open the <strong>Settings</strong> page.</li>
+<li>Set the <strong>Backend</strong> to <strong>Azure Foundry Agent</strong>.</li>
+<li>Choose the <strong>agent by name</strong> (the Adventure Works support agent from Day 1).</li>
+<li>Ask a bike question and confirm the answer comes from the agent (grounded, specific), not a generic model.</li>
+</ol>
+<blockquote>
+<p>Under the hood this sets <code>agent_config.provider</code> to <code>"foundry_agent"</code> and uses the service-principal values in <code>.env</code>. If a team prefers, they can set those in <code>project_config.py</code> directly — but the Settings page is the easy path.</p>
+</blockquote>
+<hr />
+<h2 id="3-customize-with-copilot">3. Customize with Copilot</h2>
+<p>Work through these in order. For each step, give participants the <strong>prompt</strong>, then have them <strong>read it, run it, and test it</strong>. Restart the app after each change.</p>
+<h3 id="3a-brand-the-app">3a. Brand the app</h3>
+<blockquote>
+<p><strong>Copilot prompt:</strong> "In <code>project_config.py</code>, set <code>name</code> to <strong>Adventure Works Bike Support</strong> and <code>description</code> to <em>'Helps riders troubleshoot and repair their Adventure Works bikes.'</em> In the <code>ui</code> section, set <code>title</code> to <strong>Adventure Works Bike Support</strong>, <code>subtitle</code> to <em>'Ask a question about your bike'</em>, and <code>theme_color</code> to a deep blue (#1B3A6B). Don't change anything else."</p>
+</blockquote>
+<p>Expected result: the header, title, and color update when the app restarts.</p>
+<h3 id="3b-set-helpful-sample-prompts">3b. Set helpful sample prompts</h3>
+<blockquote>
+<p><strong>Copilot prompt:</strong> "In <code>project_config.py</code>, replace the <code>ui.sample_inputs</code> list with three realistic questions a rider would ask — one about spongy brakes, one about fixing a flat tire, and one about an e-bike that won't turn on."</p>
+</blockquote>
+<p>Expected result: three new clickable starter buttons appear on the chat screen.</p>
+<h3 id="3c-optional-update-the-example-faq-content">3c. (Optional) Update the example FAQ content</h3>
+<blockquote>
+<p><strong>Copilot prompt:</strong> "In <code>core/tools/example_tools.py</code>, replace the entries in <code>_FAQ_DATA</code> with three bike-support question-and-answer pairs: brake pad wear, correct tire pressure, and e-bike battery storage. Keep the same dictionary format."</p>
+</blockquote>
+<p>Expected result: the built-in FAQ tool now returns bike answers.</p>
+<h3 id="3d-stretch-add-a-simple-help-page">3d. (Stretch) Add a simple Help page</h3>
+<blockquote>
+<p><strong>Copilot prompt:</strong> "In <code>app.py</code>, add a new route <code>/help</code> that returns a simple HTML page (as a string) titled 'How to use Adventure Works Bike Support' with a short paragraph and a bulleted list of three example questions. Keep all existing routes unchanged and don't edit anything in <code>ui/</code>."</p>
+</blockquote>
+<p>Expected result: visiting <code>http://localhost:5000/help</code> shows the new page.</p>
+<hr />
+<h2 id="4-test-the-app">4. Test the App</h2>
+<p>Confirm the app answers through the agent. These should work (they're grounded in the Day 1 knowledge base):</p>
+<ol>
+<li>My brake lever pulls almost to the handlebar before the bike slows. What should I check first?</li>
+<li>How do I fix a flat tire and replace the tube?</li>
+<li>My e-bike won't power on — what are the first steps?</li>
+<li>What tire pressure should I run for a 2.3-inch mountain bike tire?</li>
+</ol>
+<p>And these should be politely declined (out of scope), showing the agent stays in its lane:</p>
+<ol>
+<li>How much does a new brake caliper cost?</li>
+<li>Can you book a service appointment for me?</li>
+<li>What's the weather like for a ride today?</li>
+</ol>
+<blockquote>
+<p>If answers look generic or wrong, check the Settings backend (should be <strong>Azure Foundry Agent</strong>) and the <code>.env</code> values before touching anything else.</p>
+</blockquote>
+<hr />
+<h2 id="5-facilitator-notes">5. Facilitator Notes</h2>
+<ul>
+<li>Keep the whole room on the <strong>same app</strong> through Section 3 so no one falls behind; save personal creativity for the afternoon "Build Your Own" block.</li>
+<li>The biggest time-sink is <strong>agent authentication</strong> (Section 2). Pre-stage the service principal and hand out the values.</li>
+<li>When a Copilot change breaks the app, coach the <strong>undo → clearer prompt → retry</strong> loop rather than debugging line by line.</li>
+<li>More prompt patterns and weak-vs-strong examples are in the <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 handout</a>.</li>
+<li>Full step-by-step facilitation lives in the <a href="Day%202%20Facilitator%20Guide.html">Day 2 Facilitator Guide</a>.</li>
+</ul>
+  </article>
+
+  <footer>
+    <p>Microsoft AI Co-Innovation Lab — Wisconsin &nbsp;·&nbsp; Build with us: Support and Knowledge Base for Beginners</p>
+  </footer>
+
+</body>
+</html>

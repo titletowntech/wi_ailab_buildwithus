@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copilot 101 — Sample Markdown &amp; Prompt Examples</title>
+  <link rel="stylesheet" href="https://titletowntech.github.io/wi_ailab_labwebsite/styles.css" />
+  <link rel="stylesheet" href="../site-extras.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="ms-logo"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span><span class="sq4"></span></div>
+      <div class="header-title">AI Co-Innovation Lab - Wisconsin</div>
+    </div>
+  </header>
+
+  <section class="learn-hero">
+    <div class="learn-hero-inner">
+      <a class="back-link" href="../index.html">&larr; All documents</a>
+      <div class="term-name">Facilitator Guides</div>
+      <h1>Copilot 101 — Sample Markdown &amp; Prompt Examples</h1>
+      <div class="learn-meta">
+        <span>Build with us: Support &amp; Knowledge Base for Beginners</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="learn-body">
+<p>A companion handout for the <strong>GitHub Copilot 101</strong> segment of Day 2 (see the <a href="Day%202%20Facilitator%20Guide.html">Day 2 Facilitator Guide</a>, Step 3). It has two jobs:</p>
+<ol>
+<li><strong>Be a real Markdown file</strong> you can open and preview so the room can see what Markdown looks like.</li>
+<li><strong>Give ready-to-use prompt examples</strong> participants can adapt during the build.</li>
+</ol>
+<blockquote>
+<p>Tip: In VS Code, open this file and press <strong>Ctrl+Shift+V</strong> (Cmd+Shift+V on Mac) to see the rendered preview side by side with the raw text.</p>
+</blockquote>
+<hr />
+<h2 id="part-1-this-is-a-markdown-file">Part 1 · This Is a Markdown File</h2>
+<p>Markdown is just plain text with a few simple symbols that turn into formatting. You write it in any editor, and tools like VS Code and GitHub render it nicely. We use it for notes, documentation, and prompts.</p>
+<p>Here is the same content shown as raw symbols (left) and what it becomes (rendered):</p>
+<h3 id="headings">Headings</h3>
+<p>Put <code>#</code> symbols before a line. More <code>#</code> means a smaller heading.</p>
+<pre><code class="language-markdown"># Big heading
+## Medium heading
+### Small heading
+</code></pre>
+<h3 id="emphasis">Emphasis</h3>
+<pre><code class="language-markdown">**bold text**   *italic text*   `inline code`
+</code></pre>
+<p>Renders as: <strong>bold text</strong>, <em>italic text</em>, <code>inline code</code>.</p>
+<h3 id="lists">Lists</h3>
+<pre><code class="language-markdown">- First item
+- Second item
+  - Indented sub-item
+
+1. Step one
+2. Step two
+</code></pre>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Indented sub-item</li>
+</ul>
+<ol>
+<li>Step one</li>
+<li>Step two</li>
+</ol>
+<h3 id="checkboxes">Checkboxes</h3>
+<pre><code class="language-markdown">- ☐ Not done yet
+- ☑ Done
+</code></pre>
+<ul>
+<li>☐ Not done yet</li>
+<li>☑ Done</li>
+</ul>
+<h3 id="links">Links</h3>
+<pre><code class="language-markdown">[Link text](https://example.com)
+</code></pre>
+<p>Renders as: <a href="https://example.com">Link text</a></p>
+<h3 id="code-blocks">Code blocks</h3>
+<p>Wrap code in triple backticks. Add the language name for color:</p>
+<pre><code class="language-markdown">```python
+def hello():
+    print(&quot;Hello, world!&quot;)
+```
+</code></pre>
+<pre><code class="language-python">def hello():
+    print(&quot;Hello, world!&quot;)
+</code></pre>
+<h3 id="quotes-and-tables">Quotes and tables</h3>
+<pre><code class="language-markdown">&gt; This is a quote — good for callouts.
+
+| Column A | Column B |
+|----------|----------|
+| Row 1    | Value    |
+</code></pre>
+<blockquote>
+<p>This is a quote — good for callouts.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Column A</th>
+<th>Column B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 1</td>
+<td>Value</td>
+</tr>
+</tbody>
+</table>
+<p>That's most of what you'll ever need. Everything in this file — and every <code>.md</code> file in this repo — uses only these symbols.</p>
+<hr />
+<h2 id="part-2-how-to-write-a-good-prompt">Part 2 · How to Write a Good Prompt</h2>
+<p>A good prompt gives Copilot enough to get it right the first time. Aim for these five parts (you won't always need all of them):</p>
+<ol>
+<li><strong>Goal</strong> — what you want to happen.</li>
+<li><strong>Context</strong> — which file, function, or part of the app it applies to.</li>
+<li><strong>Specifics</strong> — names, values, colors, wording, behavior.</li>
+<li><strong>Example or format</strong> — show a sample, or say how the result should look.</li>
+<li><strong>Constraints</strong> — what <em>not</em> to change, or rules to follow.</li>
+</ol>
+<p>A simple pattern that works:</p>
+<blockquote>
+<p>"In <code>&lt;file&gt;</code>, <do this specific thing> so that <this happens>. Keep <this> unchanged."</p>
+</blockquote>
+<p>Then <strong>iterate</strong>: run it, see the result, and refine with a follow-up like <em>"good, now also…"</em> or <em>"that broke X — fix it and keep the rest."</em></p>
+<hr />
+<h2 id="part-3-weak-vs-strong-prompts">Part 3 · Weak vs. Strong Prompts</h2>
+<p>Same intent — the strong version gets a better result.</p>
+<table>
+<thead>
+<tr>
+<th>Weak (vague)</th>
+<th>Strong (specific)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Make it look better."</td>
+<td>"In <code>project_config.py</code>, change the app name to <strong>Acme Support</strong> and the primary color to a dark blue (#1B3A6B)."</td>
+</tr>
+<tr>
+<td>"Add a page."</td>
+<td>"In <code>app.py</code>, add a new route <code>/about</code> that renders a simple page with a heading 'About Acme Support' and one paragraph describing the company."</td>
+</tr>
+<tr>
+<td>"Fix the error."</td>
+<td>"Running <code>python app.py</code> gives this error: <em>[paste the error]</em>. What's causing it and how do I fix it?"</td>
+</tr>
+<tr>
+<td>"Add a tool."</td>
+<td>"In <code>custom_tools.py</code>, add an async function <code>get_store_hours</code> that returns our hours (Mon–Fri 9–5). Give it a clear docstring so the agent can call it."</td>
+</tr>
+<tr>
+<td>"Change the questions."</td>
+<td>"In <code>project_config.py</code>, replace the sample prompts with three questions a customer would ask our support agent about bike brakes."</td>
+</tr>
+<tr>
+<td>"Explain this."</td>
+<td>"Explain what <code>project_config.py</code> does, section by section, in plain language for a non-developer."</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-4-ready-to-use-prompts-for-todays-build">Part 4 · Ready-to-Use Prompts for Today's Build</h2>
+<p>Adapt these during the guided build and your own build. They match the template app's files.</p>
+<h3 id="understand-the-code">Understand the code</h3>
+<ul>
+<li>"Give me a plain-language tour of this project's folder structure. Which files am I meant to edit?"</li>
+<li>"Explain <code>project_config.py</code> section by section. What does each setting control?"</li>
+<li>"What does the <code>agent_config</code> section do, and how does the app decide which agent to talk to?"</li>
+</ul>
+<h3 id="branding-and-ui">Branding and UI</h3>
+<ul>
+<li>"In <code>project_config.py</code>, set the app <code>name</code> to <strong>[Company] Support Assistant</strong> and update the description to one sentence about what it helps with."</li>
+<li>"Change the sample prompts shown on the chat screen to three realistic questions our users would ask."</li>
+<li>"Change the app's primary color to <strong>[hex or color name]</strong> and make the header show our company name."</li>
+</ul>
+<h3 id="content-and-behavior">Content and behavior</h3>
+<ul>
+<li>"In <code>core/tools/example_tools.py</code>, replace the <code>_FAQ_DATA</code> entries with five questions and answers about [our topic]."</li>
+<li>"In <code>custom_tools.py</code>, add an async function <code>[name]</code> that [does X]. Include a clear docstring, then show me how to register it in <code>project_config.py</code>."</li>
+<li>"Add a friendly welcome message that appears when the chat first loads."</li>
+</ul>
+<h3 id="add-a-feature-or-page">Add a feature or page</h3>
+<ul>
+<li>"In <code>app.py</code>, add a route <code>/help</code> that renders a page listing three example questions users can ask."</li>
+<li>"Add a button labeled 'Clear conversation' that resets the chat."</li>
+</ul>
+<h3 id="test-and-fix">Test and fix</h3>
+<ul>
+<li>"Running the app shows this error: <em>[paste error]</em>. Explain the cause and give me the fix."</li>
+<li>"The app starts but the agent doesn't respond. Walk me through what to check in my <code>.env</code> and the Settings page."</li>
+<li>"This change broke the page. Undo the layout change but keep the new text."</li>
+</ul>
+<h3 id="golden-rule">Golden rule</h3>
+<blockquote>
+<p>After every prompt: <strong>read it, run it, test it.</strong> If it's wrong, undo and try a clearer prompt. You are always in control — Copilot drafts, you decide.</p>
+</blockquote>
+  </article>
+
+  <footer>
+    <p>Microsoft AI Co-Innovation Lab — Wisconsin &nbsp;·&nbsp; Build with us: Support and Knowledge Base for Beginners</p>
+  </footer>
+
+</body>
+</html>

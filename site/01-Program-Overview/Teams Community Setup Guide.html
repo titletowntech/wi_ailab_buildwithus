@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build with us: Support and Knowledge Base for Beginners — Teams Community Setup Guide</title>
+  <link rel="stylesheet" href="https://titletowntech.github.io/wi_ailab_labwebsite/styles.css" />
+  <link rel="stylesheet" href="../site-extras.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="ms-logo"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span><span class="sq4"></span></div>
+      <div class="header-title">AI Co-Innovation Lab - Wisconsin</div>
+    </div>
+  </header>
+
+  <section class="learn-hero">
+    <div class="learn-hero-inner">
+      <a class="back-link" href="../index.html">&larr; All documents</a>
+      <div class="term-name">Program Overview</div>
+      <h1>Build with us: Support and Knowledge Base for Beginners — Teams Community Setup Guide</h1>
+      <div class="learn-meta">
+        <span>Build with us: Support &amp; Knowledge Base for Beginners</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="learn-body">
+<p>A step-by-step guide for the <strong>event organizer</strong> to stand up and configure the Microsoft Teams community that runs the program — plus ideas for weaving in AI so the community itself showcases the technology participants are here to learn.</p>
+<blockquote>
+<p><strong>The big idea:</strong> This event teaches people to build a knowledge-grounded support agent. Let's <em>run the event the same way</em> — with a grounded "Build with us Assistant" answering readiness questions in Teams. The community becomes a live demo of the outcome.</p>
+</blockquote>
+<p>Related: this supports the <strong>Registration</strong> and <strong>Event Operations</strong> items in the <a href="Preparation%20Checklist.html">Preparation Checklist</a>.</p>
+<hr />
+<h2 id="1-what-this-community-is-for">1. What This Community Is For</h2>
+<p>One place where participating organizations (who come from <strong>different companies</strong>) can:</p>
+<ul>
+<li>Get announcements and program updates</li>
+<li>Ask readiness questions and get help clearing blockers</li>
+<li>Share files, discoveries, and lessons learned</li>
+<li>Collaborate as a community — not as isolated teams</li>
+<li>Reach the facilitators between sessions</li>
+</ul>
+<hr />
+<h2 id="2-assumptions-prerequisites">2. Assumptions &amp; Prerequisites</h2>
+<p>This guide assumes:</p>
+<ul>
+<li>You have a <strong>Microsoft 365 tenant</strong> with Microsoft Teams.</li>
+<li>You (or a partner admin) have <strong>Teams admin</strong> rights to enable guest access.</li>
+<li>Participants are <strong>external</strong> to your organization (different companies) and will join as <strong>guests</strong>.</li>
+<li><em>Optional, for the AI layer:</em> an <strong>Azure AI Foundry</strong> project (to build the assistant) plus permission to create an <strong>Azure Bot Service</strong> resource to connect it to Teams, and — for meeting AI — <strong>Microsoft 365 Copilot</strong> licenses for the organizers who run meetings.</li>
+</ul>
+<blockquote>
+<p><strong>What would change the approach below:</strong> If participants turn out to be <em>inside your tenant</em>, skip guest access entirely. If your security policy <strong>forbids adding guests</strong>, use <strong>shared channels</strong> instead (see the decision in Section 3) and drop the in-channel bot/Planner features. If the Foundry or Copilot pieces aren't available, the community still works fully — the AI layer in Section 9 is additive, not required.</p>
+</blockquote>
+<hr />
+<h2 id="3-key-design-decision-how-external-people-join">3. Key Design Decision — How External People Join</h2>
+<p>Because participants come from other companies, you must choose how they collaborate. The choice affects which features you get.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>External people join as…</th>
+<th>Bots/agents in channel</th>
+<th>Planner (Tasks)</th>
+<th>Channel moderation</th>
+<th>Best when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>One team + guest access</strong> <em>(recommended)</em></td>
+<td>Guests (a B2B account in your directory)</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+<td>You want a full community with an in-channel assistant, a blocker board, and moderated announcements</td>
+</tr>
+<tr>
+<td><strong>Shared channels (Teams Connect)</strong></td>
+<td>External participants (no guest account needed)</td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>Guests aren't allowed, or people must stay in their own Teams without switching profiles</td>
+</tr>
+<tr>
+<td><strong>Multiple teams (one per cohort/company)</strong></td>
+<td>Guests</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Very large cohorts needing isolation — more overhead to manage</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation: one team with guest access and standard channels.</strong> It's the only option that supports all three community features we want — the <strong>AI assistant in-channel</strong>, the <strong>shared blocker board</strong>, and <strong>moderated announcements</strong> — in one place.</p>
+<blockquote>
+<p><strong>What would change this recommendation:</strong> If your org can't or won't add guests, switch to <strong>shared channels</strong> and move the assistant to a pinned link/tab instead of an in-channel bot. If cohorts are large and need strict separation, split into multiple teams and replicate the channel structure below in each.</p>
+</blockquote>
+<hr />
+<h2 id="4-step-1-enable-guest-access-teams-admin">4. Step 1 — Enable Guest Access (Teams Admin)</h2>
+<p>Guest access is what lets people from other companies into your team. It's controlled at the tenant level and may take a short time to take effect.</p>
+<ol>
+<li>In the <strong>Teams admin center</strong>, turn on <strong>guest access</strong>. See <a href="https://learn.microsoft.com/microsoftteams/set-up-guests">Turn on or turn off guest access</a>.</li>
+<li>Walk the dependent settings (Microsoft Entra B2B, Microsoft 365 Groups, SharePoint/OneDrive) using the <a href="https://learn.microsoft.com/microsoftteams/guest-access-checklist">Guest access checklist</a>.</li>
+<li>Review what guests can and can't do: <a href="https://learn.microsoft.com/microsoftteams/guest-access">Guest access in Microsoft Teams</a>.</li>
+</ol>
+<blockquote>
+<p>Guests sign in with their existing work or personal email; those without a Microsoft account use a one-time passcode. A guest must be <strong>added to the team</strong> before guest features light up.</p>
+</blockquote>
+<hr />
+<h2 id="5-step-2-create-the-team">5. Step 2 — Create the Team</h2>
+<ol>
+<li>In Teams, choose <strong>+ Join or create a team → Create team → From scratch</strong>.</li>
+<li>Set privacy to <strong>Private</strong> (people join by invitation/approval).</li>
+<li>Name it clearly, e.g. <strong>Build with us: Support &amp; Knowledge Base for Beginners</strong>.</li>
+<li>Add a short description and a recognizable team picture/logo.</li>
+<li>Add <strong>at least two owners</strong> (you plus a co-organizer) so ownership is never single-threaded.</li>
+</ol>
+<p>References: <a href="https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/">Create and manage teams and channels</a> · <a href="https://learn.microsoft.com/microsoftteams/teams-channels-overview">Teams and channels overview</a> · <a href="https://learn.microsoft.com/microsoftteams/manage-teams-in-modern-portal">Manage teams in the admin center</a>.</p>
+<hr />
+<h2 id="6-step-3-channel-architecture">6. Step 3 — Channel Architecture</h2>
+<p>Keep it simple and predictable. Use <strong>standard</strong> channels (visible to all members) unless noted. Recommended set:</p>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Purpose</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>📣 Announcements</strong></td>
+<td>Program updates, dates, reminders</td>
+<td>Turn on <strong>moderation</strong> so only owners post (see Step 4)</td>
+</tr>
+<tr>
+<td><strong>👋 Start Here</strong></td>
+<td>Onboarding, introductions, how the community works</td>
+<td>Pin the welcome post and key links</td>
+</tr>
+<tr>
+<td><strong>✅ Readiness Help</strong></td>
+<td>Business + technical readiness questions and blockers</td>
+<td>The busiest channel; where the AI assistant lives</td>
+</tr>
+<tr>
+<td><strong>🧠 Pre-Skilling &amp; Resources</strong></td>
+<td>Curriculum links, worksheets, readiness pages, recordings</td>
+<td>Pin docs as tabs (Step 5)</td>
+</tr>
+<tr>
+<td><strong>🛠️ Tech Support &amp; Blockers</strong></td>
+<td>Environment/setup issues (Azure, VS Code, Python, Copilot)</td>
+<td>Feeds the blocker board</td>
+</tr>
+<tr>
+<td><strong>💡 Show &amp; Tell</strong></td>
+<td>Discoveries, tips, "prompt of the day," demos</td>
+<td>Celebrate wins; encourage peer learning</td>
+</tr>
+<tr>
+<td><strong>🎉 Event Days</strong></td>
+<td>Live Day 1 / Day 2 coordination and Q&amp;A</td>
+<td>Active only during the event</td>
+</tr>
+<tr>
+<td><strong>☕ Community / Social</strong></td>
+<td>Introductions and informal chat</td>
+<td>Keeps the community human</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Prefer <strong>fewer, well-named channels</strong>. You can always add more; too many splinters the conversation. Reserve <strong>private channels</strong> for the facilitator team's internal coordination (only team members can be added; up to 30 per team).</p>
+</blockquote>
+<hr />
+<h2 id="7-step-4-configure-channels">7. Step 4 — Configure Channels</h2>
+<ul>
+<li><strong>Lock down Announcements:</strong> turn on <strong>channel moderation</strong> so only owners/moderators start posts and (optionally) control replies. See <a href="https://learn.microsoft.com/microsoftteams/manage-channel-moderation-in-teams">Set up and manage channel moderation</a>.</li>
+<li><strong>Post announcements as Announcements</strong> (the formatted headline style) for scannability.</li>
+<li><strong>Pin a welcome post</strong> in <em>Start Here</em> summarizing the channels and how to get help.</li>
+<li><strong>Name consistently</strong> and add a one-line description to each channel so newcomers self-orient.</li>
+</ul>
+<hr />
+<h2 id="8-step-5-add-apps-tabs-shared-tools">8. Step 5 — Add Apps, Tabs &amp; Shared Tools</h2>
+<p>Turn each channel into a workspace by pinning the right tabs:</p>
+<ul>
+<li><strong>Files / worksheets</strong> — Upload the <a href="../02-Participant-Materials/Homework%20Package.html">Homework Package</a>, <a href="../02-Participant-Materials/Pre-Skilling%20Package.html">Pre-Skilling Package</a>, and the <a href="../02-Participant-Materials/Business%20Readiness%20Worksheet.html">Business</a> and <a href="../02-Participant-Materials/Technical%20Readiness%20Worksheet.html">Technical</a> worksheets, and pin them as tabs in <em>Pre-Skilling &amp; Resources</em>.</li>
+<li><strong>Blocker board (Planner / Tasks in Teams)</strong> — Add a <strong>Tasks by Planner</strong> tab in <em>Tech Support &amp; Blockers</em> with buckets <strong>New → In Progress → Resolved</strong>, assign an owner and due date to each blocker, and label by area (Azure, VS Code, Python, Copilot). See <a href="https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/6-use-tasks-app-teams">Use the Tasks app in Teams</a>.</li>
+<li><strong>Shared knowledge base (OneNote or a Wiki-style page)</strong> — Capture recurring answers and fixes so the same question is answered once.</li>
+<li><strong>Website tabs</strong> — Pin the <a href="https://titletowntech.github.io/wi_ailab_labwebsite/index.html">pre-skilling site</a> and its readiness pages directly in <em>Pre-Skilling &amp; Resources</em>.</li>
+<li><strong>Forms</strong> — A short weekly <strong>readiness pulse</strong> and a <strong>post-event feedback</strong> form (see Section 9 for AI summarization).</li>
+</ul>
+<hr />
+<h2 id="9-the-ai-layer-make-it-world-class">9. The AI Layer — Make It World-Class</h2>
+<p>This is where the community becomes a showcase. Add these on top of the basics above.</p>
+<h3 id="9a-the-build-with-us-assistant-the-showcase-on-theme-dogfooding">9a. The "Build with us Assistant" (the showcase — on-theme dogfooding)</h3>
+<p>Build the assistant in <strong>Azure AI Foundry</strong> — the very platform participants use on Day 1 — grounded in the program's own documents (homework, pre-skilling, worksheets, readiness pages), and publish it into Teams. Participants can ask <em>"How do I check my Azure subscription?"</em> or <em>"What goes in the success criteria?"</em> and get grounded answers 24/7 — the exact pattern they'll build on Day 1.</p>
+<p>How:
+1. In the <strong>Azure AI Foundry</strong> portal, create an agent and add the readiness docs / pre-skilling content as <strong>knowledge</strong> (file search / a vector store) — the same grounding pattern taught on Day 1.
+2. Test it in the playground, then <strong>Publish → Teams and Microsoft 365 Copilot</strong>. Foundry auto-provisions an <strong>Azure Bot Service</strong> resource and builds the Teams app package for you: <a href="https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot">Publish a Foundry agent to Teams</a>.
+3. Set <strong>Who can use this agent</strong> to <strong>People in your organization</strong> (tenant-wide, needs a one-time Microsoft 365 admin approval) so your facilitators and guests can reach it; <strong>Just you</strong> keeps it private while you test.
+4. <strong>Add the published agent to the Readiness Help channel</strong> and pin it so it's one click away.</p>
+<p>Prerequisites: a Foundry project, the <strong>Foundry User</strong> role, permission to create an <strong>Azure Bot Service</strong> resource (for example <strong>Azure Bot Service Contributor</strong>), and the <code>Microsoft.BotService</code> provider registered in the subscription. For automation or private-network projects, use the <a href="https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot-virtual-network">REST / virtual-network publish flow</a>; for a pro-code path, use the <a href="https://aka.ms/aif2m365-procode">Microsoft 365 Agents Toolkit</a>.</p>
+<blockquote>
+<p>Narrative gold: on Day 1 you can say <em>"the assistant that's been helping you all month? It's an Azure AI Foundry agent — you're about to build one just like it."</em></p>
+</blockquote>
+<h3 id="9b-intelligent-meeting-recaps-weekly-readiness-meetings">9b. Intelligent meeting recaps (weekly readiness meetings)</h3>
+<p>With <strong>Microsoft 365 Copilot</strong>, record/transcribe the weekly readiness meetings to get an <strong>automatic recap, notes, and action items</strong> — then paste the actions into the blocker board. Saves the facilitator from manual note-taking and keeps absent teams in the loop. <em>(Requires Microsoft 365 Copilot licensing for the meeting organizer.)</em></p>
+<h3 id="9c-catch-me-up-and-drafting-with-copilot-in-teams">9c. "Catch me up" and drafting with Copilot in Teams</h3>
+<p>Encourage facilitators to use Copilot in Teams to <strong>summarize a busy channel</strong>, <strong>catch up</strong> after time away, and <strong>draft announcements</strong> in a consistent, friendly tone. <em>(Requires Microsoft 365 Copilot.)</em></p>
+<h3 id="9d-pulse-feedback-summarized-by-ai">9d. Pulse + feedback, summarized by AI</h3>
+<p>Collect a weekly <strong>Forms</strong> readiness pulse ("green/yellow/red, and your biggest blocker") and use Copilot to <strong>summarize themes</strong> for the facilitator team, so the next meeting targets the real blockers. Reuse the same pattern for <strong>post-event feedback</strong>.</p>
+<h3 id="9e-prompt-of-the-day">9e. "Prompt of the day"</h3>
+<p>In <em>Show &amp; Tell</em>, post a daily Copilot prompt participants can try (great warm-up for Day 2). Builds prompt fluency before the build day.</p>
+<hr />
+<h2 id="10-step-6-automations-power-automate">10. Step 6 — Automations (Power Automate)</h2>
+<p>Light automation keeps the community responsive without manual effort:</p>
+<ul>
+<li><strong>Welcome flow</strong> — when a new member joins, auto-post a friendly welcome in <em>Start Here</em> with the key links.</li>
+<li><strong>Blocker intake</strong> — when someone posts in <em>Tech Support &amp; Blockers</em> with a keyword/tag, <strong>create a Planner task</strong> and <strong>notify the escalation facilitator</strong>.</li>
+<li><strong>Weekly reminders</strong> — auto-post the readiness-meeting reminder and agenda each week.</li>
+<li><strong>Digest</strong> — a weekly summary of open blockers and their owners.</li>
+</ul>
+<hr />
+<h2 id="11-step-7-invite-participants">11. Step 7 — Invite Participants</h2>
+<ol>
+<li>Add each participant as a <strong>guest</strong> by email (People picker → type their email → <strong>Add</strong>). They must be added to the team before guest features work.</li>
+<li>Send a short welcome note explaining how to accept the invite and switch to the <strong>guest profile</strong> in Teams.</li>
+<li>Point them to <strong>Start Here</strong> first.</li>
+</ol>
+<p>Reference: <a href="https://learn.microsoft.com/microsoft-365/solutions/collaborate-as-team">Collaborate with guests in a team</a>.</p>
+<hr />
+<h2 id="12-governance-care">12. Governance &amp; Care</h2>
+<ul>
+<li><strong>Two+ owners</strong> at all times; document who owns what.</li>
+<li><strong>Code of conduct</strong> pinned in <em>Start Here</em> (be kind, share openly, no confidential company data).</li>
+<li><strong>No secrets or private data</strong> — remind participants not to paste credentials, keys, or sensitive documents into chat.</li>
+<li><strong>Moderation</strong> on Announcements; keep other channels open for conversation.</li>
+<li><strong>Accessibility</strong> — use the Announcement style, descriptive link text, and alt text on images.</li>
+<li><strong>Lifecycle</strong> — decide what happens to the team after the event (archive vs. keep as an alumni community).</li>
+</ul>
+<hr />
+<h2 id="13-cadence-how-the-community-is-used">13. Cadence — How the Community Is Used</h2>
+<ul>
+<li><strong>Pre-event (Weeks 1–4):</strong> readiness Q&amp;A, the AI assistant, weekly pulse, blocker board, meeting recaps.</li>
+<li><strong>During the event (Day 1 &amp; 2):</strong> the <em>Event Days</em> channel for live coordination, file sharing, and quick help.</li>
+<li><strong>Post-event:</strong> share recordings and resources, capture feedback, and decide whether to keep the community running for alumni.</li>
+</ul>
+<hr />
+<h2 id="14-organizer-setup-checklist">14. Organizer Setup Checklist</h2>
+<ul>
+<li>☐ Guest access enabled in the Teams admin center</li>
+<li>☐ Team created (Private), described, with a logo and <strong>2+ owners</strong></li>
+<li>☐ Channels created and named per Section 6</li>
+<li>☐ Announcements channel moderated</li>
+<li>☐ Worksheets, packages, and readiness links pinned as tabs</li>
+<li>☐ Planner blocker board set up (New / In Progress / Resolved)</li>
+<li>☐ Shared knowledge base (OneNote) started</li>
+<li>☐ Weekly pulse and post-event feedback Forms created</li>
+<li>☐ "Build with us Assistant" built in Azure AI Foundry, published to Teams, and scoped appropriately <em>(AI layer)</em></li>
+<li>☐ Power Automate welcome + blocker-intake flows configured <em>(automation)</em></li>
+<li>☐ Code of conduct and "no secrets" reminder pinned in Start Here</li>
+<li>☐ Participants invited as guests and welcomed</li>
+</ul>
+<hr />
+<h2 id="15-references-microsoft-learn">15. References (Microsoft Learn)</h2>
+<ul>
+<li>Guest access: <a href="https://learn.microsoft.com/microsoftteams/guest-access">overview</a> · <a href="https://learn.microsoft.com/microsoftteams/set-up-guests">turn on/off</a> · <a href="https://learn.microsoft.com/microsoftteams/guest-access-checklist">checklist</a> · <a href="https://learn.microsoft.com/microsoft-365/solutions/collaborate-as-team">collaborate with guests in a team</a></li>
+<li>Teams &amp; channels: <a href="https://learn.microsoft.com/microsoftteams/teams-channels-overview">overview</a> · <a href="https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/">create &amp; manage (training)</a> · <a href="https://learn.microsoft.com/microsoftteams/shared-channels">shared channels</a> · <a href="https://learn.microsoft.com/microsoftteams/private-channels">private channels</a></li>
+<li>Operations: <a href="https://learn.microsoft.com/microsoftteams/manage-channel-moderation-in-teams">channel moderation</a> · <a href="https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/6-use-tasks-app-teams">Tasks app in Teams</a> · <a href="https://learn.microsoft.com/microsoftteams/manage-teams-in-modern-portal">manage teams in admin center</a></li>
+<li>Azure AI Foundry agent in Teams: <a href="https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot">publish to Teams (portal)</a> · <a href="https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot-virtual-network">publish via REST / virtual network</a> · <a href="https://aka.ms/aif2m365-procode">Microsoft 365 Agents Toolkit</a></li>
+</ul>
+  </article>
+
+  <footer>
+    <p>Microsoft AI Co-Innovation Lab — Wisconsin &nbsp;·&nbsp; Build with us: Support and Knowledge Base for Beginners</p>
+  </footer>
+
+</body>
+</html>

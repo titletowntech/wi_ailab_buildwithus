@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build with us: Support and Knowledge Base for Beginners — Day 2 Facilitator Guide</title>
+  <link rel="stylesheet" href="https://titletowntech.github.io/wi_ailab_labwebsite/styles.css" />
+  <link rel="stylesheet" href="../site-extras.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="ms-logo"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span><span class="sq4"></span></div>
+      <div class="header-title">AI Co-Innovation Lab - Wisconsin</div>
+    </div>
+  </header>
+
+  <section class="learn-hero">
+    <div class="learn-hero-inner">
+      <a class="back-link" href="../index.html">&larr; All documents</a>
+      <div class="term-name">Facilitator Guides</div>
+      <h1>Build with us: Support and Knowledge Base for Beginners — Day 2 Facilitator Guide</h1>
+      <div class="learn-meta">
+        <span>Build with us: Support &amp; Knowledge Base for Beginners</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="learn-body">
+<p>A detailed, step-by-step plan for the facilitator to run Day 2. Work through it in order, but let the day breathe: the schedule is a guide, not a stopwatch. When a good question or discovery opens a useful tangent, follow it — then bring the room back to the current step.</p>
+<p><strong>Day 2 focus:</strong> Each company uses <strong>GitHub Copilot and VS Code</strong> to build a small app around the agent they created on Day 1 — first a guided build together using the provided template, then a version customized for their own use case. The theme: <em>building software with AI assistance.</em></p>
+<p>Companion documents: <a href="../03-Event-Agendas/Day%202%20Agenda.html">Day 2 Agenda.md</a> · <a href="Day%201%20Facilitator%20Guide.html">Day 1 Facilitator Guide.md</a> · <a href="Day%202%20Guided%20Agent%20Kit.html">Day 2 Guided Agent Kit.md</a></p>
+<p>Template app: the <strong>Wisconsin AI Co-Innovation Lab Prototype Template</strong> (<a href="https://github.com/titletowntech/wi_ailab_prototype_template">titletowntech/wi_ailab_prototype_template</a>) — a reusable Flask framework where each prototype lives in its own folder and a developer only edits a handful of files.</p>
+<hr />
+<h2 id="how-to-use-this-guide">How to Use This Guide</h2>
+<ul>
+<li><strong>Move step by step.</strong> Each section below is a stop on the path. Finish one before moving to the next.</li>
+<li><strong>Not time-bound.</strong> The agenda has suggested times, but the day progresses at whatever pace it goes. Don't rush a step that's landing well; don't linger on one that's done.</li>
+<li><strong>Allow tangents.</strong> Real questions from the room are where the learning happens. Follow a worthwhile tangent, capture anything off-topic in a "parking lot," and return to the step you left.</li>
+<li><strong>Protect the group.</strong> Never stall the whole room for one blocked team. Hand blockers to the escalation facilitator and keep the group moving.</li>
+<li><strong>Keep Copilot in the driver's seat — with a human at the wheel.</strong> The goal today is for participants to <em>build with AI assistance</em>: describe what they want, let Copilot draft it, then read, test, and iterate. Reinforce that they stay in control — accept, reject, and adjust.</li>
+</ul>
+<hr />
+<h2 id="facilitator-roles">Facilitator Roles</h2>
+<p>If you have a team, split these roles. If you're running it solo, keep the order the same and lean on the group to help each other.</p>
+<ul>
+<li><strong>Lead facilitator</strong> — Owns pacing and transitions, opens and closes each step, leads the guided build and demos, decides when to follow a tangent and when to move on.</li>
+<li><strong>Technical facilitators</strong> — Circulate during hands-on steps; help with VS Code, Copilot, Python, running the app, and connecting the agent; surface repeated issues so the lead can address the whole room.</li>
+<li><strong>Escalation facilitator</strong> — Owns environment and connection blockers (Copilot sign-in, Python, <code>.env</code>, Foundry agent auth) so they don't slow the room; pulls blocked participants aside; tracks unresolved issues in Teams.</li>
+<li><strong>Room / ops support</strong> — Wi-Fi, check-in, Teams and file sharing, breaks, and logistics.</li>
+</ul>
+<hr />
+<h2 id="before-the-day-starts">Before the Day Starts</h2>
+<ul>
+<li>☐ Room, Wi-Fi, and power confirmed; Teams channel open for file sharing.</li>
+<li>☐ Your own copy of the template app running locally — you will demo the finished experience.</li>
+<li>☐ The <strong>finished app</strong> ready to show as the "destination" before anyone builds.</li>
+<li>☐ The template repo available to participants (<a href="https://github.com/titletowntech/wi_ailab_prototype_template">titletowntech/wi_ailab_prototype_template</a>) and confirmed downloadable on the event network.</li>
+<li>☐ A known-good <strong><code>.env</code></strong> recipe ready — the exact Azure AI Foundry values participants need (<code>AZURE_FOUNDRY_ENDPOINT</code>, <code>AZURE_FOUNDRY_API_KEY</code>, <code>AZURE_AI_PROJECT_ENDPOINT</code>) and, for connecting a Day 1 <strong>Foundry agent</strong>, the service-principal values (<code>AZURE_TENANT_ID</code> and the app-registration client ID / secret with the <strong>Azure AI Developer</strong> role on the project).</li>
+<li>☐ Decide and pre-stage the <strong>agent connection path</strong> (see the callout in Step 4) so participants don't lose build time on authentication.</li>
+<li>☐ A short list of <strong>guided-build Copilot prompts</strong> ready to share (branding change, add a page, add a feature) — see the <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 handout</a>.</li>
+<li>☐ A shared blocker tracker open (Teams or a simple list) with columns for issue, owner, and status.</li>
+</ul>
+<blockquote>
+<p><strong>Connecting to the Day 1 agent — read this first.</strong> The template chats with a Foundry <strong>model</strong> out of the box. To route chat to the <strong>agent</strong> each team built on Day 1, the app's <strong>Settings</strong> page has a <strong>Backend</strong> dropdown ("Azure Foundry Agent"). The Foundry agent runtime requires a real Azure AD sign-in — the Foundry API key alone is <strong>not</strong> accepted — so it uses a <strong>service principal</strong> (an Entra app registration with a client secret and the <strong>Azure AI Developer</strong> role on the project). This is the single most likely time-sink of the day. Pre-stage it: have the app registration and role assignment ready, and give teams the values, so the room spends its time building, not troubleshooting auth. See the template's README section <em>"Connect to an Azure Foundry agent."</em></p>
+</blockquote>
+<hr />
+<h2 id="step-1-tech-setup">Step 1 · Tech Setup</h2>
+<p><strong>Goal:</strong> Everyone's development environment is ready before any content begins.</p>
+<p>Do this:
+1. Welcome people and point them to Wi-Fi and the Teams channel.
+2. Confirm each participant can <strong>open VS Code</strong> and that <strong>GitHub Copilot is signed in and working</strong> (Copilot Chat responds).
+3. Confirm each participant has the <strong>template app downloaded</strong> and open in VS Code.
+4. Confirm Python is available and they can create/activate a virtual environment.
+5. Technical and escalation facilitators circulate to clear setup issues immediately.</p>
+<p>Watch for:
+- Copilot not suggesting or Chat unavailable → check sign-in and the correct GitHub account with an active Copilot plan.
+- <code>python</code> not recognized, or <code>pip install</code> blocked → work as an escalation blocker.
+- Template not downloaded → get them the repo before content starts.</p>
+<p>Move on when: most of the room has VS Code + Copilot working and the template open. Hand stragglers to escalation and begin.</p>
+<hr />
+<h2 id="step-2-day-2-overview">Step 2 · Day 2 Overview</h2>
+<p><strong>Goal:</strong> Everyone understands what they're building today and how AI helps them build it.</p>
+<p>Do this:
+1. State the goal plainly: <em>today we wrap your Day 1 agent in a simple app, using GitHub Copilot to help us write the code.</em>
+2. <strong>Show the finished app.</strong> Type a question, show it answering through the agent. Seeing the destination first makes the build make sense.
+3. Give a quick tour of how the day flows: Copilot 101 → guided build together → build your own → share.
+4. Set expectations: you don't need to be a developer today; you need to describe what you want and work with Copilot to get there.</p>
+<p>Tangent to allow: "how much coding do I actually have to know?" — address it head-on. The reassuring answer sets the tone for the whole day.</p>
+<p>Move on when: the room can describe, in a sentence, what they're building and the role Copilot plays.</p>
+<hr />
+<h2 id="step-3-github-copilot-101">Step 3 · GitHub Copilot 101</h2>
+<p><strong>Goal:</strong> Everyone can use Copilot effectively before the build starts. Keep it practical and hands-on — this short segment is what makes the guided build go smoothly.</p>
+<p>Handout: <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 — Sample Markdown &amp; Prompt Examples</a>. Open it in VS Code and use it live — it doubles as the sample Markdown file (below) and the prompt reference.</p>
+<h3 id="3a-show-what-copilot-does-in-vs-code">3a. Show what Copilot does in VS Code</h3>
+<ol>
+<li><strong>Inline suggestions</strong> — start typing or write a comment describing what you want; Copilot suggests code you accept with <strong>Tab</strong>.</li>
+<li><strong>Copilot Chat</strong> — ask questions or request changes in plain language in the chat panel.</li>
+<li><strong>Edits across files</strong> — Copilot can propose changes spanning multiple files; you review and apply them.</li>
+<li>Point out that you can always <strong>undo</strong> (Ctrl+Z) if a suggestion isn't right.</li>
+</ol>
+<h3 id="3b-explain-markdown-and-show-a-real-md-file">3b. Explain Markdown (and show a real <code>.md</code> file)</h3>
+<ol>
+<li>Open the handout <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 — Sample Markdown &amp; Prompt Examples</a> and press <strong>Ctrl+Shift+V</strong> to show the rendered preview next to the raw text.</li>
+<li>Point out the handful of symbols that do everything: <code>#</code> headings, <code>**bold**</code>, <code>-</code> lists, <code>`code`</code>, links, and code blocks.</li>
+<li>Explain <em>why we care</em>: our notes, docs, and many prompts are Markdown — and it's the plain, readable format Copilot works well with.</li>
+</ol>
+<h3 id="3c-teach-a-good-prompt-pattern">3c. Teach a good-prompt pattern</h3>
+<p>Walk through the five parts of a strong prompt (full version and more examples are in the handout):</p>
+<ol>
+<li><strong>Goal</strong> — what you want to happen.</li>
+<li><strong>Context</strong> — which file or part of the app.</li>
+<li><strong>Specifics</strong> — names, values, colors, wording.</li>
+<li><strong>Example or format</strong> — show a sample or say how it should look.</li>
+<li><strong>Constraints</strong> — what <em>not</em> to change.</li>
+</ol>
+<p>A pattern that works: <em>"In <code>&lt;file&gt;</code>, <code>&lt;do this specific thing&gt;</code> so that <code>&lt;this happens&gt;</code>. Keep <code>&lt;this&gt;</code> unchanged."</em></p>
+<p>Show a weak-vs-strong pair so the difference lands:</p>
+<ul>
+<li>Weak: <em>"Make it look better."</em></li>
+<li>Strong: <em>"In <code>project_config.py</code>, change the app name to </em><em>Acme Support</em><em> and the primary color to a dark blue (#1B3A6B)."</em></li>
+</ul>
+<h3 id="3d-show-the-accept-reject-iterate-loop">3d. Show the accept / reject / iterate loop</h3>
+<ol>
+<li>Accept a suggestion, then refine it with a follow-up (<em>"good, now also…"</em>).</li>
+<li>Reject one and rewrite the prompt more specifically.</li>
+<li>Show how to <strong>undo</strong> when Copilot goes the wrong way, and re-approach with a clearer prompt.</li>
+</ol>
+<h3 id="3e-quick-hands-on-together">3e. Quick hands-on together</h3>
+<p>Do one small exercise as a group so everyone succeeds once — for example, open the handout and have everyone ask Copilot Chat: <em>"Explain what a <code>project_config.py</code> file is likely used for in a small web app, in plain language."</em> Confirm everyone gets a response.</p>
+<p>Watch for: participants accepting code they don't understand. Model the habit out loud — <em>read it, run it, then keep or revert.</em></p>
+<p>Move on when: everyone has generated and accepted (or rejected) at least one Copilot suggestion.</p>
+<hr />
+<h2 id="step-4-guided-build-connect-the-agent-template-app">Step 4 · Guided Build — Connect the Agent (Template App)</h2>
+<p><strong>Goal:</strong> Everyone builds the <em>same</em> app together using the template, connects it to a Day 1 agent, and sees it respond. This is the anchor of the day — go slow enough that everyone succeeds.</p>
+<p>Use the <a href="Day%202%20Guided%20Agent%20Kit.html">Day 2 Guided Agent Kit</a> for the exact build script, connection recipe, and step-by-step Copilot prompts.</p>
+<h3 id="4a-tour-the-template">4a. Tour the template</h3>
+<ol>
+<li>Walk the room through the template's structure: each prototype lives in its own folder under <code>projects/</code>, and a developer only edits a few files.</li>
+<li>Point out the <strong>files you edit</strong> — <code>project_config.py</code> (name, UI, agent config), <code>core/tools/example_tools.py</code> (the FAQ/example data), <code>custom_tools.py</code> (optional custom tools), and <code>app.py</code> (routes) — and the <strong>framework you don't</strong> (<code>core/</code> and <code>ui/</code>).</li>
+<li>Emphasize: copy the template folder first, then work only in those few files.</li>
+</ol>
+<h3 id="4b-create-the-project-and-set-credentials">4b. Create the project and set credentials</h3>
+<ol>
+<li>Have each team <strong>copy</strong> <code>projects/_template</code> to a new folder (e.g., <code>projects/my-company</code>).</li>
+<li>Copy <code>.env.example</code> to <code>.env</code> and fill in the Azure AI Foundry values from your prepared recipe.</li>
+<li>Install dependencies and confirm the app <strong>runs</strong> before changing anything: activate the virtual environment, <code>pip install -r requirements.txt</code>, <code>python app.py</code>, then open <code>http://localhost:5000</code>.</li>
+<li>Get a working, unmodified app on every screen before customizing — a shared "it works" moment.</li>
+</ol>
+<h3 id="4c-connect-the-day-1-agent">4c. Connect the Day 1 agent</h3>
+<ol>
+<li>Follow your pre-staged connection path (see the callout in <em>Before the Day Starts</em>).</li>
+<li>In the running app, open the <strong>Settings</strong> page and set the <strong>Backend</strong> to <strong>Azure Foundry Agent</strong> so chat routes to the team's Day 1 agent.</li>
+<li>Confirm the app answers using the agent, not a generic model.</li>
+</ol>
+<h3 id="4d-customize-with-copilot">4d. Customize with Copilot</h3>
+<ol>
+<li>Use Copilot Chat to make guided changes step by step — share your prepared prompts. Good first changes:
+   - <strong>Branding / UI</strong> — change the app name, colors, and sample prompts in <code>project_config.py</code>.
+   - <strong>Content</strong> — update the example FAQ data.
+   - <strong>Behavior</strong> — adjust a sample prompt or add a small feature.</li>
+<li>After each change: <strong>read it, run it, test it.</strong> Reinforce the accept/reject/iterate loop.</li>
+<li>Do frequent check-ins: "Thumbs up when your app restarts cleanly." Wait for the room before advancing.</li>
+</ol>
+<h3 id="4e-test">4e. Test</h3>
+<ol>
+<li>Ask questions that <strong>should</strong> work and confirm the app responds through the agent.</li>
+<li>Note that good app behavior depends on the Day 1 agent behind it — a callback to yesterday's <em>good data</em> lesson.</li>
+</ol>
+<p>Watch for:
+- App won't start → almost always a <code>.env</code> value or a Python/venv issue; check those first.
+- Port <code>5000</code> already in use → stop the other process or run on a different port.
+- Agent errors / auth failures → the Foundry-agent service-principal setup; hand to escalation with the prepared values.
+- Copilot edit breaks the app → use it as a teaching moment: undo, describe the goal more precisely, try again.</p>
+<p>Tangent to allow: "could Copilot add <em>X</em>?" is a great live demo — try it together briefly, then return.</p>
+<p>Move on when: every team has the template app running, connected to their Day 1 agent, with at least one Copilot-made change and a successful test.</p>
+<hr />
+<h2 id="step-5-lunch-working-break">Step 5 · Lunch / Working Break</h2>
+<p>Use this as a buffer. Technical and escalation facilitators stay available to unblock any team that's behind so everyone starts the afternoon on even footing.</p>
+<hr />
+<h2 id="step-6-build-your-own">Step 6 · Build Your Own</h2>
+<p><strong>Goal:</strong> Each company customizes the app for their own use case, with one-on-one coaching. This is where it becomes their app.</p>
+<p>Do this:
+1. Have teams point the app at <strong>their own</strong> Day 1 agent (their company's use case).
+2. Use Copilot to <strong>customize</strong> the app — branding, sample prompts, the example FAQ/tools, and any small features that fit their scenario.
+3. Encourage progressive changes, each tested before the next:
+   - Branding / UI change
+   - Add or change a page or screen
+   - Add a small piece of functionality
+   - Tune the experience for their users
+4. Have them <strong>test</strong> deliberately:
+   - Which questions <strong>should</strong> work?
+   - Which questions <strong>should not</strong> work?</p>
+<p>Facilitators: coach one-on-one. Circulate constantly. Encourage teams to describe intent to Copilot in plain language, then read and test what it produces.</p>
+<p>Watch for:
+- Scope creep → help them pick one or two changes they can finish and demo.
+- A team stuck on setup → escalate so their build time isn't lost.
+- Copilot rabbit holes → coach them to revert to the last working version and re-approach with a clearer prompt.</p>
+<p>Move on when: each team has a working app of their own (even a modest one) and something they're proud to show.</p>
+<hr />
+<h2 id="step-7-demos">Step 7 · Demos</h2>
+<p><strong>Goal:</strong> Teams share what they built and learn from each other. Demos are optional but strongly encouraged.</p>
+<p>Do this:
+1. Invite companies to give a short demo, each covering:
+   - <strong>Problem</strong> — what they set out to solve
+   - <strong>Solution</strong> — the app they built
+   - <strong>Lessons</strong> — what they learned building with AI assistance
+2. Keep them short so several teams can share.
+3. Call out patterns — especially clever uses of Copilot and moments where describing intent clearly produced better results.</p>
+<p>Move on when: a good cross-section of teams has shared.</p>
+<hr />
+<h2 id="step-8-wrap-up-next-steps">Step 8 · Wrap-Up &amp; Next Steps</h2>
+<p><strong>Goal:</strong> Close the event and point participants toward what's next.</p>
+<p>Do this:
+1. <strong>Recap the two days</strong> — from a knowledge-grounded agent on Day 1 to a working app around it on Day 2.
+2. <strong>Discuss future deployment</strong> — what it would take to move from prototype to something their team could use.
+3. Have each company name a concrete next step:
+   - What they built and the problem it solves
+   - What a version 2 should include
+   - Who owns next steps, and what help they need
+4. <strong>Share resources</strong> for continued learning (Copilot, the template, Azure AI Foundry).
+5. Q&amp;A and closing.</p>
+<hr />
+<h2 id="blocker-model-green-yellow-red">Blocker Model (Green / Yellow / Red)</h2>
+<p>Use this all day to keep the room moving:</p>
+<ul>
+<li><strong>Green</strong> — Team is progressing normally.</li>
+<li><strong>Yellow</strong> — Minor issue, but they can continue. A technical facilitator helps in the flow.</li>
+<li><strong>Red</strong> — Team is blocked and cannot progress. Escalation facilitator takes it aside; capture it in the tracker; rejoin the team to the main flow when ready.</li>
+</ul>
+<p>Rules: don't stop the whole room for one red blocker; keep every blocker visible with an owner.</p>
+<p>Common issues and responses:</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copilot not suggesting / Chat unavailable</td>
+<td>Check sign-in and the correct GitHub account with an active Copilot plan</td>
+</tr>
+<tr>
+<td><code>python</code> not recognized / venv won't activate</td>
+<td>Escalation support; confirm Python install and activation command</td>
+</tr>
+<tr>
+<td><code>pip install</code> fails or is blocked</td>
+<td>Check network/proxy; escalation support for company restrictions</td>
+</tr>
+<tr>
+<td>App won't start</td>
+<td>Check <code>.env</code> values and that the virtual environment is active</td>
+</tr>
+<tr>
+<td>Port 5000 already in use</td>
+<td>Stop the other process or run the app on a different port</td>
+</tr>
+<tr>
+<td>Agent auth / Foundry connection error</td>
+<td>Use the pre-staged service principal values; hand to escalation</td>
+</tr>
+<tr>
+<td>App runs but the agent errors</td>
+<td>Verify endpoint and keys in <code>.env</code> and the Settings backend selection</td>
+</tr>
+<tr>
+<td>Copilot edit broke the app</td>
+<td>Undo to the last working version; restate the goal and retry</td>
+</tr>
+<tr>
+<td>Team is behind</td>
+<td>Keep them on the guided build; skip optional customizations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="end-of-day-facilitator-checklist">End-of-Day Facilitator Checklist</h2>
+<p>Before closing, confirm:</p>
+<ul>
+<li>☐ Every team ran the template app locally.</li>
+<li>☐ Every team connected the app to a Day 1 agent and saw it respond.</li>
+<li>☐ Every team made at least one change with Copilot and tested it.</li>
+<li>☐ Every team customized the app for <strong>their own</strong> use case (even modestly).</li>
+<li>☐ Teams shared or prepared a short demo.</li>
+<li>☐ Each company named a concrete next step and who owns it.</li>
+<li>☐ Open blockers are captured with an owner for follow-up.</li>
+</ul>
+<hr />
+<h2 id="closing-through-line">Closing Through-Line</h2>
+<p>Use or adapt this to close the event:</p>
+<blockquote>
+<p>Over two days you went from an idea to something real: on Day 1 you built a knowledge-grounded agent from trusted documents, and today you wrapped it in a working app — with GitHub Copilot helping you write the code. That's what building with AI assistance looks like. You described what you wanted, AI drafted it, and you read, tested, and refined it. You don't have to be a career developer to build something useful — you have to know your problem, bring good knowledge, and work with your tools. Take that back to your team, and keep building.</p>
+</blockquote>
+  </article>
+
+  <footer>
+    <p>Microsoft AI Co-Innovation Lab — Wisconsin &nbsp;·&nbsp; Build with us: Support and Knowledge Base for Beginners</p>
+  </footer>
+
+</body>
+</html>

@@ -88,9 +88,17 @@ The run-the-day materials live in [04-Facilitator-Guides/](04-Facilitator-Guides
 | [Day 2 Facilitator Guide.md](04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md) | Step-by-step plan for running Day 2 | Organizers |
 | [Day 2 Guided Agent Kit.md](04-Facilitator-Guides/Day%202%20Guided%20Agent%20Kit.md) | Day 2 guided-build script, connection recipe, and Copilot prompts | Organizers |
 | [Copilot 101 - Sample Markdown and Prompts.md](04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md) | Day 2 Copilot 101 handout: sample Markdown and prompt examples | Everyone |
-| [Foundry Readiness Page Prompt.md](04-Facilitator-Guides/Foundry%20Readiness%20Page%20Prompt.md) | Prompt to add an Azure AI Foundry readiness page to the pre-skilling site | Organizers |
 | [Business Readiness Worksheet.md](02-Participant-Materials/Business%20Readiness%20Worksheet.md) | Template to define a support / knowledge-base use case | Participants |
 | [Technical Readiness Worksheet.md](02-Participant-Materials/Technical%20Readiness%20Worksheet.md) | Template to confirm environment and tooling readiness | Participants |
+
+---
+
+## Shareable Website (HTML)
+
+A styled, static HTML version of these documents — matching the [pre-skilling site](https://titletowntech.github.io/wi_ailab_labwebsite/index.html) theme — is generated into [site/](site/) for easy sharing and publishing to GitHub Pages.
+
+- **Regenerate** after editing any Markdown: `python build_site.py` (requires `pip install markdown`).
+- **Publish**: point GitHub Pages at the `site/` folder (or copy its contents to your Pages branch). Open [site/index.html](site/index.html) locally to preview.
 
 ---
 
