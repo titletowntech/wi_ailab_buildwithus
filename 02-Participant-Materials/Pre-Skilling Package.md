@@ -39,21 +39,12 @@ These are the terms you'll hear us use during the event, each explained in plain
 
 ---
 
-## Part 3: See an Agent in Action
-
-Try a live AI agent built in the lab to see the kind of thing you'll build.
-
-- [ ] [Talk to our lab assistant](https://titletowntech.github.io/wi_ailab_labwebsite/buildwithus_agent/index.html)
-
----
-
 ## What Good Looks Like
 
 By the time the event starts, you should be able to say:
 
 - "I understand the kind of AI our lab builds and what it does well."
 - "I know the key terms: LLM, model, agent, tools, and prompt engineering."
-- "I've seen a working agent example."
 
 ---
 
@@ -61,5 +52,4 @@ By the time the event starts, you should be able to say:
 
 - [ ] Completed the Getting Started overview
 - [ ] Read through the key terms and concepts
-- [ ] Tried the live agent example
 - [ ] Any questions noted to bring to the next readiness meeting

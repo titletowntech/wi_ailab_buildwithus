@@ -48,7 +48,7 @@ Complete the following:
 
 ## Part 3: Pre-Skilling
 
-Complete the learning curriculum in the [Pre-Skilling Package](Pre-Skilling%20Package.md) before the event. It covers how our lab works, the key AI terms and concepts, and a live agent example.
+Complete the learning curriculum in the [Pre-Skilling Package](Pre-Skilling%20Package.md) before the event. It covers how our lab works and the key AI terms and concepts.
 
 - [ ] Pre-skilling complete (see the [Pre-Skilling Package](Pre-Skilling%20Package.md))
 

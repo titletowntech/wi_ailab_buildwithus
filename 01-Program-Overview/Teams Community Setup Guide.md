@@ -1,8 +1,8 @@
 # Build with us: Support and Knowledge Base for Beginners — Teams Community Setup Guide
 
-A step-by-step guide for the **event organizer** to stand up and configure the Microsoft Teams community that runs the program — plus ideas for weaving in AI so the community itself showcases the technology participants are here to learn.
+A step-by-step guide for the **event organizer** to stand up and configure the Microsoft Teams community that runs the program — plus ideas for weaving in AI so the community runs smoothly.
 
-> **The big idea:** This event teaches people to build a knowledge-grounded support agent. Let's *run the event the same way* — with a grounded "Build with us Assistant" answering readiness questions in Teams. The community becomes a live demo of the outcome.
+> **The big idea:** Make the community the calmest part of the program — one predictable place where every question gets answered and every blocker is tracked, so teams arrive on event day ready to build.
 
 Related: this supports the **Registration** and **Event Operations** items in the [Preparation Checklist](Preparation%20Checklist.md).
 
@@ -27,9 +27,9 @@ This guide assumes:
 - You have a **Microsoft 365 tenant** with Microsoft Teams.
 - You (or a partner admin) have **Teams admin** rights to enable guest access.
 - Participants are **external** to your organization (different companies) and will join as **guests**.
-- *Optional, for the AI layer:* an **Azure AI Foundry** project (to build the assistant) plus permission to create an **Azure Bot Service** resource to connect it to Teams, and — for meeting AI — **Microsoft 365 Copilot** licenses for the organizers who run meetings.
+- *Optional, for the AI layer:* **Microsoft 365 Copilot** licenses for the organizers who run meetings (for meeting recaps and channel summaries).
 
-> **What would change the approach below:** If participants turn out to be *inside your tenant*, skip guest access entirely. If your security policy **forbids adding guests**, use **shared channels** instead (see the decision in Section 3) and drop the in-channel bot/Planner features. If the Foundry or Copilot pieces aren't available, the community still works fully — the AI layer in Section 9 is additive, not required.
+> **What would change the approach below:** If participants turn out to be *inside your tenant*, skip guest access entirely. If your security policy **forbids adding guests**, use **shared channels** instead (see the decision in Section 3) and drop the Planner/moderation features. If Copilot isn't available, the community still works fully — the AI layer in Section 9 is additive, not required.
 
 ---
 
@@ -37,15 +37,15 @@ This guide assumes:
 
 Because participants come from other companies, you must choose how they collaborate. The choice affects which features you get.
 
-| Approach | External people join as… | Bots/agents in channel | Planner (Tasks) | Channel moderation | Best when |
+| Approach | External people join as… | Apps & flows in channel | Planner (Tasks) | Channel moderation | Best when |
 |---|---|---|---|---|---|
-| **One team + guest access** *(recommended)* | Guests (a B2B account in your directory) | ✅ Yes | ✅ Yes | ✅ Yes | You want a full community with an in-channel assistant, a blocker board, and moderated announcements |
+| **One team + guest access** *(recommended)* | Guests (a B2B account in your directory) | ✅ Yes | ✅ Yes | ✅ Yes | You want a full community with a blocker board, in-channel forms/automations, and moderated announcements |
 | **Shared channels (Teams Connect)** | External participants (no guest account needed) | ❌ No | ❌ No | ❌ No | Guests aren't allowed, or people must stay in their own Teams without switching profiles |
 | **Multiple teams (one per cohort/company)** | Guests | ✅ | ✅ | ✅ | Very large cohorts needing isolation — more overhead to manage |
 
-**Recommendation: one team with guest access and standard channels.** It's the only option that supports all three community features we want — the **AI assistant in-channel**, the **shared blocker board**, and **moderated announcements** — in one place.
+**Recommendation: one team with guest access and standard channels.** It's the only option that supports all three community features we want — the **shared blocker board (Planner)**, **in-channel forms and automations**, and **moderated announcements** — in one place.
 
-> **What would change this recommendation:** If your org can't or won't add guests, switch to **shared channels** and move the assistant to a pinned link/tab instead of an in-channel bot. If cohorts are large and need strict separation, split into multiple teams and replicate the channel structure below in each.
+> **What would change this recommendation:** If your org can't or won't add guests, switch to **shared channels** (you'll lose Planner, moderation, and some app support). If cohorts are large and need strict separation, split into multiple teams and replicate the channel structure below in each.
 
 ---
 
@@ -81,7 +81,7 @@ Keep it simple and predictable. Use **standard** channels (visible to all member
 |---|---|---|
 | **📣 Announcements** | Program updates, dates, reminders | Turn on **moderation** so only owners post (see Step 4) |
 | **👋 Start Here** | Onboarding, introductions, how the community works | Pin the welcome post and key links |
-| **✅ Readiness Help** | Business + technical readiness questions and blockers | The busiest channel; where the AI assistant lives |
+| **✅ Readiness Help** | Business + technical readiness questions and blockers | The busiest channel; questions and blockers land here |
 | **🧠 Pre-Skilling & Resources** | Curriculum links, worksheets, readiness pages, recordings | Pin docs as tabs (Step 5) |
 | **🛠️ Tech Support & Blockers** | Environment/setup issues (Azure, VS Code, Python, Copilot) | Feeds the blocker board |
 | **💡 Show & Tell** | Discoveries, tips, "prompt of the day," demos | Celebrate wins; encourage peer learning |
@@ -117,29 +117,16 @@ Turn each channel into a workspace by pinning the right tabs:
 
 This is where the community becomes a showcase. Add these on top of the basics above.
 
-### 9a. The "Build with us Assistant" (the showcase — on-theme dogfooding)
-Build the assistant in **Azure AI Foundry** — the very platform participants use on Day 1 — grounded in the program's own documents (homework, pre-skilling, worksheets, readiness pages), and publish it into Teams. Participants can ask *"How do I check my Azure subscription?"* or *"What goes in the success criteria?"* and get grounded answers 24/7 — the exact pattern they'll build on Day 1.
-
-How:
-1. In the **Azure AI Foundry** portal, create an agent and add the readiness docs / pre-skilling content as **knowledge** (file search / a vector store) — the same grounding pattern taught on Day 1.
-2. Test it in the playground, then **Publish → Teams and Microsoft 365 Copilot**. Foundry auto-provisions an **Azure Bot Service** resource and builds the Teams app package for you: [Publish a Foundry agent to Teams](https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot).
-3. Set **Who can use this agent** to **People in your organization** (tenant-wide, needs a one-time Microsoft 365 admin approval) so your facilitators and guests can reach it; **Just you** keeps it private while you test.
-4. **Add the published agent to the Readiness Help channel** and pin it so it's one click away.
-
-Prerequisites: a Foundry project, the **Foundry User** role, permission to create an **Azure Bot Service** resource (for example **Azure Bot Service Contributor**), and the `Microsoft.BotService` provider registered in the subscription. For automation or private-network projects, use the [REST / virtual-network publish flow](https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot-virtual-network); for a pro-code path, use the [Microsoft 365 Agents Toolkit](https://aka.ms/aif2m365-procode).
-
-> Narrative gold: on Day 1 you can say *"the assistant that's been helping you all month? It's an Azure AI Foundry agent — you're about to build one just like it."*
-
-### 9b. Intelligent meeting recaps (weekly readiness meetings)
+### 9a. Intelligent meeting recaps (weekly readiness meetings)
 With **Microsoft 365 Copilot**, record/transcribe the weekly readiness meetings to get an **automatic recap, notes, and action items** — then paste the actions into the blocker board. Saves the facilitator from manual note-taking and keeps absent teams in the loop. *(Requires Microsoft 365 Copilot licensing for the meeting organizer.)*
 
-### 9c. "Catch me up" and drafting with Copilot in Teams
+### 9b. "Catch me up" and drafting with Copilot in Teams
 Encourage facilitators to use Copilot in Teams to **summarize a busy channel**, **catch up** after time away, and **draft announcements** in a consistent, friendly tone. *(Requires Microsoft 365 Copilot.)*
 
-### 9d. Pulse + feedback, summarized by AI
+### 9c. Pulse + feedback, summarized by AI
 Collect a weekly **Forms** readiness pulse ("green/yellow/red, and your biggest blocker") and use Copilot to **summarize themes** for the facilitator team, so the next meeting targets the real blockers. Reuse the same pattern for **post-event feedback**.
 
-### 9e. "Prompt of the day"
+### 9d. "Prompt of the day"
 In *Show & Tell*, post a daily Copilot prompt participants can try (great warm-up for Day 2). Builds prompt fluency before the build day.
 
 ---
@@ -178,7 +165,7 @@ Reference: [Collaborate with guests in a team](https://learn.microsoft.com/micro
 
 ## 13. Cadence — How the Community Is Used
 
-- **Pre-event (Weeks 1–4):** readiness Q&A, the AI assistant, weekly pulse, blocker board, meeting recaps.
+- **Pre-event (Weeks 1–4):** readiness Q&A, weekly pulse, blocker board, meeting recaps.
 - **During the event (Day 1 & 2):** the *Event Days* channel for live coordination, file sharing, and quick help.
 - **Post-event:** share recordings and resources, capture feedback, and decide whether to keep the community running for alumni.
 
@@ -194,7 +181,6 @@ Reference: [Collaborate with guests in a team](https://learn.microsoft.com/micro
 - [ ] Planner blocker board set up (New / In Progress / Resolved)
 - [ ] Shared knowledge base (OneNote) started
 - [ ] Weekly pulse and post-event feedback Forms created
-- [ ] "Build with us Assistant" built in Azure AI Foundry, published to Teams, and scoped appropriately *(AI layer)*
 - [ ] Power Automate welcome + blocker-intake flows configured *(automation)*
 - [ ] Code of conduct and "no secrets" reminder pinned in Start Here
 - [ ] Participants invited as guests and welcomed
@@ -206,4 +192,3 @@ Reference: [Collaborate with guests in a team](https://learn.microsoft.com/micro
 - Guest access: [overview](https://learn.microsoft.com/microsoftteams/guest-access) · [turn on/off](https://learn.microsoft.com/microsoftteams/set-up-guests) · [checklist](https://learn.microsoft.com/microsoftteams/guest-access-checklist) · [collaborate with guests in a team](https://learn.microsoft.com/microsoft-365/solutions/collaborate-as-team)
 - Teams & channels: [overview](https://learn.microsoft.com/microsoftteams/teams-channels-overview) · [create & manage (training)](https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/) · [shared channels](https://learn.microsoft.com/microsoftteams/shared-channels) · [private channels](https://learn.microsoft.com/microsoftteams/private-channels)
 - Operations: [channel moderation](https://learn.microsoft.com/microsoftteams/manage-channel-moderation-in-teams) · [Tasks app in Teams](https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/6-use-tasks-app-teams) · [manage teams in admin center](https://learn.microsoft.com/microsoftteams/manage-teams-in-modern-portal)
-- Azure AI Foundry agent in Teams: [publish to Teams (portal)](https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot) · [publish via REST / virtual network](https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot-virtual-network) · [Microsoft 365 Agents Toolkit](https://aka.ms/aif2m365-procode)
