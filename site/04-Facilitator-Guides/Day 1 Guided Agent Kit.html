@@ -32,6 +32,7 @@
 <p>The guided agent is an <strong>Adventure Works</strong> bicycle technical-support assistant, grounded in the troubleshooting articles in <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a> (documents TS-001 through TS-020).</p>
 <blockquote>
 <p>Facilitator note: paste the prompt below into the agent's <strong>instructions</strong>, upload the <strong><a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a></strong> set as the agent's knowledge/files, then work through the questions with the room.</p>
+<p><strong>⚠️ Before the event — one-time publishing setup.</strong> If you plan to <strong>publish</strong> the agent to Teams / Microsoft 365 (not just test it in the Foundry playground), the Azure subscription must have the <strong><code>Microsoft.BotService</code></strong> resource provider registered. See <a href="#5-publishing-to-teams--microsoft-365">Publishing to Teams / Microsoft 365</a> at the bottom of this kit. Verify this ahead of time so the room isn't blocked.</p>
 </blockquote>
 <hr />
 <h2 id="1-guided-agent-prompt">1. Guided Agent Prompt</h2>
@@ -124,6 +125,29 @@ STAYING IN SCOPE
 <p><strong>The takeaway to land with the room:</strong></p>
 <blockquote>
 <p>Same model, same prompt — only the knowledge changed. Clean, complete, well-structured documents produce a trustworthy agent. Vague notes, forum threads, and unfinished drafts produce an untrustworthy one. This is why your Day 2 (and real-world) success starts with good source material.</p>
+</blockquote>
+<hr />
+<h2 id="5-publishing-to-teams-microsoft-365">5. Publishing to Teams / Microsoft 365</h2>
+<p>Testing an agent in the Foundry <strong>playground</strong> works with no extra setup. <strong>Publishing</strong> it to Teams and Microsoft 365 apps is different: Foundry provisions an <strong>Azure Bot</strong> resource behind the scenes, and that requires the <strong><code>Microsoft.BotService</code></strong> resource provider to be registered on the Azure subscription.</p>
+<p>If it isn't registered, the <strong>Publish to Teams and Microsoft 365</strong> dialog fails with:</p>
+<blockquote>
+<p>The subscription is not registered to use namespace 'Microsoft.BotService'. See https://aka.ms/rps-not-found for how to register subscriptions. [Status: 409, Code: MissingSubscriptionRegistration]</p>
+</blockquote>
+<p><strong>How to fix it (one time per subscription — needs Owner or Contributor):</strong></p>
+<p><em>Option A — Azure Portal (recommended for non-experts)</em>
+1. Open the <a href="https://portal.azure.com">Azure Portal</a> → <strong>Subscriptions</strong> → select the subscription used for the lab.
+2. In the left menu, under <strong>Settings</strong>, choose <strong>Resource providers</strong>.
+3. Search for <strong>Microsoft.BotService</strong>.
+4. Select it and click <strong>Register</strong>. Wait until the status changes to <strong>Registered</strong> (usually 1–2 minutes).
+5. Return to Foundry and retry <strong>Publish</strong>.</p>
+<p><em>Option B — Azure Cloud Shell / CLI</em></p>
+<pre><code class="language-bash">az provider register --namespace Microsoft.BotService
+# check status (should return: Registered)
+az provider show --namespace Microsoft.BotService --query registrationState -o tsv
+</code></pre>
+<p>Only one person with subscription-level rights needs to do this. Once the provider is <strong>Registered</strong>, everyone on that subscription can publish agents to Teams / Microsoft 365.</p>
+<blockquote>
+<p>Facilitator tip: verify this during readiness (it's on the <a href="../02-Participant-Materials/Technical%20Readiness%20Worksheet.html">Technical Readiness Worksheet</a> and <a href="../01-Program-Overview/Preparation%20Checklist.html">Preparation Checklist</a>) so no team is blocked on event day. Publishing also requires the developer/terms/privacy fields in the dialog and appropriate Microsoft 365 admin permissions to make the app available in Teams — check with your tenant admin if publishing is part of your goal.</p>
 </blockquote>
   </article>
 

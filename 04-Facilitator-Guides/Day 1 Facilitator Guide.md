@@ -116,6 +116,8 @@ Move on when: everyone has shared and the room feels connected.
 1. Walk the room through deploying (or preparing to deploy) the agent.
 2. Confirm each team has a working, deployed guided agent before moving on.
 
+> **Publishing to Teams / Microsoft 365 requires one-time subscription setup.** The first time an agent is published, Foundry creates an **Azure Bot** resource, which needs the **`Microsoft.BotService`** resource provider registered on the subscription. If it isn't, publishing fails with *"The subscription is not registered to use namespace 'Microsoft.BotService'... [Code: MissingSubscriptionRegistration]"*. Confirm this was handled during readiness (see the [Technical Readiness Worksheet](../02-Participant-Materials/Technical%20Readiness%20Worksheet.md) and the [Day 1 Guided Agent Kit](Day%201%20Guided%20Agent%20Kit.md#5-publishing-to-teams--microsoft-365)). If a team hits this in the room, have someone with **Owner/Contributor** register the provider (Azure Portal → Subscription → **Resource providers** → **Microsoft.BotService** → **Register**, or `az provider register --namespace Microsoft.BotService`) — registration takes 1–2 minutes, after which they can retry publishing.
+
 ### 4d. Best practices — good data vs. bad data
 1. Start with the **good data** set ([Sample Files - Good](../05-Sample-Files/Sample%20Files%20-%20Good/)) and ask a question; note the quality of the answer.
 2. Switch to the **bad data** set ([Sample Files - Bad](../05-Sample-Files/Sample%20Files%20-%20Bad/)) and ask the *same* question; show how the answer degrades.

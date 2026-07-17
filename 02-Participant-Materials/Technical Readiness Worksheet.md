@@ -14,6 +14,7 @@ Use this worksheet to confirm your environment is ready before the event.
 - [ ] Subscription owner identified
 - [ ] Participants can successfully access Azure Portal
 - [ ] No corporate restrictions preventing Azure usage
+- [ ] `Microsoft.BotService` resource provider registered on the subscription (required to publish an agent to Teams / Microsoft 365)
 
 **Subscription ID (required):**
 
@@ -21,6 +22,7 @@ Use this worksheet to confirm your environment is ready before the event.
 ### Azure AI Foundry Access
 
 - [ ] Azure AI Foundry access verified
+- [ ] Participants have the **Azure AI User** (Foundry User) role on the Foundry project
 - [ ] Can successfully create or open a project
 - [ ] Participants can access Azure AI Foundry without errors
 

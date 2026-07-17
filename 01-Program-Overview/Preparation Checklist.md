@@ -30,6 +30,7 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [x] Publish the [Technical Readiness Overview page](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/index.html)
 - [x] Publish the [Azure Subscription Readiness page](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/azure.html)
 - [x] Publish the [Azure AI Foundry Readiness page](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/foundry.html)
+- [ ] Register the `Microsoft.BotService` resource provider on each participating subscription (required to publish agents to Teams / Microsoft 365) — Azure Portal → Subscription → **Resource providers** → **Microsoft.BotService** → **Register**, or `az provider register --namespace Microsoft.BotService`
 - [x] Publish the [VS Code Readiness page](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/vscode.html)
 - [x] Publish the [Python Readiness page](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/python.html)
 - [x] Publish the [GitHub Copilot Readiness page](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/copilot.html)

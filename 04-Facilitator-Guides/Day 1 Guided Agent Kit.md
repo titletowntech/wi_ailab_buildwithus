@@ -6,6 +6,8 @@ The guided agent is an **Adventure Works** bicycle technical-support assistant, 
 
 > Facilitator note: paste the prompt below into the agent's **instructions**, upload the **[Sample Files - Good](../05-Sample-Files/Sample%20Files%20-%20Good/)** set as the agent's knowledge/files, then work through the questions with the room.
 
+> **⚠️ Before the event — one-time publishing setup.** If you plan to **publish** the agent to Teams / Microsoft 365 (not just test it in the Foundry playground), the Azure subscription must have the **`Microsoft.BotService`** resource provider registered. See [Publishing to Teams / Microsoft 365](#5-publishing-to-teams--microsoft-365) at the bottom of this kit. Verify this ahead of time so the room isn't blocked.
+
 ---
 
 ## 1. Guided Agent Prompt
@@ -113,3 +115,33 @@ The agent can't provide torque specs or reliable steps, hedges, or has to say it
 **The takeaway to land with the room:**
 
 > Same model, same prompt — only the knowledge changed. Clean, complete, well-structured documents produce a trustworthy agent. Vague notes, forum threads, and unfinished drafts produce an untrustworthy one. This is why your Day 2 (and real-world) success starts with good source material.
+
+---
+
+## 5. Publishing to Teams / Microsoft 365
+
+Testing an agent in the Foundry **playground** works with no extra setup. **Publishing** it to Teams and Microsoft 365 apps is different: Foundry provisions an **Azure Bot** resource behind the scenes, and that requires the **`Microsoft.BotService`** resource provider to be registered on the Azure subscription.
+
+If it isn't registered, the **Publish to Teams and Microsoft 365** dialog fails with:
+
+> The subscription is not registered to use namespace 'Microsoft.BotService'. See https://aka.ms/rps-not-found for how to register subscriptions. [Status: 409, Code: MissingSubscriptionRegistration]
+
+**How to fix it (one time per subscription — needs Owner or Contributor):**
+
+*Option A — Azure Portal (recommended for non-experts)*
+1. Open the [Azure Portal](https://portal.azure.com) → **Subscriptions** → select the subscription used for the lab.
+2. In the left menu, under **Settings**, choose **Resource providers**.
+3. Search for **Microsoft.BotService**.
+4. Select it and click **Register**. Wait until the status changes to **Registered** (usually 1–2 minutes).
+5. Return to Foundry and retry **Publish**.
+
+*Option B — Azure Cloud Shell / CLI*
+```bash
+az provider register --namespace Microsoft.BotService
+# check status (should return: Registered)
+az provider show --namespace Microsoft.BotService --query registrationState -o tsv
+```
+
+Only one person with subscription-level rights needs to do this. Once the provider is **Registered**, everyone on that subscription can publish agents to Teams / Microsoft 365.
+
+> Facilitator tip: verify this during readiness (it's on the [Technical Readiness Worksheet](../02-Participant-Materials/Technical%20Readiness%20Worksheet.md) and [Preparation Checklist](../01-Program-Overview/Preparation%20Checklist.md)) so no team is blocked on event day. Publishing also requires the developer/terms/privacy fields in the dialog and appropriate Microsoft 365 admin permissions to make the app available in Teams — check with your tenant admin if publishing is part of your goal.
