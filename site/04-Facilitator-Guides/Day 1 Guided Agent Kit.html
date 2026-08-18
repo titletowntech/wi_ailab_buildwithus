@@ -29,9 +29,9 @@
 
   <article class="learn-body">
 <p>Everything the facilitator needs to run the <strong>guided agent</strong> in Step 4 of the <a href="Day%201%20Facilitator%20Guide.html">Day 1 Facilitator Guide</a>: the agent prompt, the test questions (should-work and should-not-work), and the good-vs-bad-data demo.</p>
-<p>The guided agent is an <strong>Adventure Works</strong> bicycle technical-support assistant, grounded in the troubleshooting articles in <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a> (documents TS-001 through TS-020).</p>
+<p>The guided agent is an <strong>Adventure Works</strong> bicycle technical-support assistant, grounded in the troubleshooting articles in <a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Good</a> (documents TS-001 through TS-020).</p>
 <blockquote>
-<p>Facilitator note: paste the prompt below into the agent's <strong>instructions</strong>, upload the <strong><a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a></strong> set as the agent's knowledge/files, then work through the questions with the room.</p>
+<p>Facilitator note: paste the prompt below into the agent's <strong>instructions</strong>, upload the <strong><a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Good</a></strong> set as the agent's knowledge/files, then work through the questions with the room.</p>
 <p><strong>⚠️ Model selection — use <code>model-router</code>.</strong> When creating the agent, choose the <strong>Model Router</strong> model deployment instead of a specific model. It automatically selects an appropriate underlying model for each request and is <strong>not restricted by per-model quota</strong>, so teams won't get blocked by quota or capacity errors mid-build. Say this out loud before the room starts creating agents.</p>
 <p><strong>⚠️ Before the event — one-time publishing setup.</strong> If you plan to <strong>publish</strong> the agent to Teams / Microsoft 365 (not just test it in the Foundry playground), the Azure subscription must have the <strong><code>Microsoft.BotService</code></strong> resource provider registered. See <a href="#5-publishing-to-teams--microsoft-365">Publishing to Teams / Microsoft 365</a> at the bottom of this kit. Verify this ahead of time so the room isn't blocked.</p>
 </blockquote>
@@ -79,7 +79,7 @@ STAYING IN SCOPE
 </code></pre>
 <hr />
 <h2 id="2-test-questions-should-work">2. Test Questions — Should Work</h2>
-<p>These are all answerable from <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>. Use them to show the agent giving accurate, grounded answers. The document each draws from is noted for the facilitator.</p>
+<p>These are all answerable from <a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Good</a>. Use them to show the agent giving accurate, grounded answers. The document each draws from is noted for the facilitator.</p>
 <ol>
 <li>My brake lever pulls almost to the handlebar before the bike slows down. What should I check first? <em>(TS-001)</em></li>
 <li>What's the correct torque for the disc brake caliper mount bolts? <em>(TS-001 — 6–8 N·m)</em></li>
@@ -112,13 +112,13 @@ STAYING IN SCOPE
 <hr />
 <h2 id="4-good-data-vs-bad-data-demo">4. Good Data vs. Bad Data Demo</h2>
 <p>Show the same question against two knowledge sets to prove the point: <strong>the agent is only as good as the documents behind it.</strong></p>
-<p><strong>Setup:</strong> Keep the prompt the same. First run the agent with <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>, then swap in <a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a> and ask the identical question.</p>
+<p><strong>Setup:</strong> Keep the prompt the same. First run the agent with <a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Good</a>, then swap in <a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Bad</a> and ask the identical question.</p>
 <p><strong>Recommended demo question:</strong></p>
 <blockquote>
 <p>"My brakes feel soft and the lever pulls to the bar. What should I do, and what torque should I use on the caliper bolts?"</p>
 </blockquote>
-<p><strong>With the good data (<a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a>):</strong> the agent gives clear, ordered steps (inspect pads, check pad-to-rim gap, clean the rotor, take up cable slack, re-test at walking pace), the exact spec (<strong>disc caliper mount bolts 6–8 N·m</strong>), and the correct safety warnings — because <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">TS-001</a> is complete, structured, and specific.</p>
-<p><strong>With the bad data (<a href="../05-Sample-Files/Sample%20Files%20-%20Bad/">Sample Files - Bad</a>):</strong> the answer falls apart. The matching source files are unusable —
+<p><strong>With the good data (<a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Good</a>):</strong> the agent gives clear, ordered steps (inspect pads, check pad-to-rim gap, clean the rotor, take up cable slack, re-test at walking pace), the exact spec (<strong>disc caliper mount bolts 6–8 N·m</strong>), and the correct safety warnings — because <a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">TS-001</a> is complete, structured, and specific.</p>
+<p><strong>With the bad data (<a href="https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip">Sample Files - Bad</a>):</strong> the answer falls apart. The matching source files are unusable —
 - <code>BAD-001</code> is vague, uncertain notes ("bleed it or dont… idk it depends"),
 - <code>BAD-002</code> is an old forum thread with <strong>no accepted answer</strong>,
 - <code>BAD-005</code> is a <strong>DRAFT with "TODO" placeholders</strong> and no steps.</p>

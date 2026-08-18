@@ -26,6 +26,12 @@ OUT = os.path.join(ROOT, "site")
 # Absolute URL to the live pre-skilling stylesheet (guarantees an exact match).
 BASE_CSS = "https://titletowntech.github.io/wi_ailab_labwebsite/styles.css"
 
+# On the published site the sample files are distributed only as a single zip.
+SAMPLES_ZIP = "BWU_Sample_Files.zip"
+SAMPLES_ZIP_URL = (
+    "https://titletowntech.github.io/wi_ailab_buildwithus/site/BWU_Sample_Files.zip"
+)
+
 # Folders whose Markdown we publish, plus the root README.
 CONTENT_DIRS = [
     "01-Program-Overview",
@@ -61,6 +67,12 @@ def rewrite_links(md_text: str) -> str:
         return f"]({newpath}.html{anchor})"
 
     return pattern.sub(repl, md_text)
+
+
+def rewrite_sample_links(md_text: str) -> str:
+    """Point every 05-Sample-Files link at the downloadable sample-files zip."""
+    pattern = re.compile(r"\]\((?!https?://)[^)]*05-Sample-Files[^)]*\)")
+    return pattern.sub(f"]({SAMPLES_ZIP_URL})", md_text)
 
 
 def task_checkboxes(md_text: str) -> str:
@@ -134,6 +146,7 @@ def convert(md_path, out_path, depth):
     with open(md_path, "r", encoding="utf-8") as f:
         text = f.read()
     text = rewrite_links(text)
+    text = rewrite_sample_links(text)
     text = task_checkboxes(text)
     title, body = extract_title(text)
     category = CATEGORY.get(os.path.basename(os.path.dirname(md_path)), "Overview")
@@ -173,10 +186,12 @@ def main():
                 convert(src, out, depth=1)
             built.append(f"{d}/{name[:-3]}.html")
 
-    # Copy the sample-file folders so their assets travel with the site.
-    samples = os.path.join(ROOT, "05-Sample-Files")
-    if os.path.isdir(samples):
-        shutil.copytree(samples, os.path.join(OUT, "05-Sample-Files"))
+    # Ship the sample files as a single zip download; the site links only to this.
+    samples_zip = os.path.join(ROOT, SAMPLES_ZIP)
+    if os.path.isfile(samples_zip):
+        shutil.copy2(samples_zip, os.path.join(OUT, SAMPLES_ZIP))
+    else:
+        print(f"WARNING: {SAMPLES_ZIP} not found at repo root; site links will 404.")
 
     # Write the extras stylesheet.
     with open(os.path.join(OUT, "site-extras.css"), "w", encoding="utf-8") as f:
