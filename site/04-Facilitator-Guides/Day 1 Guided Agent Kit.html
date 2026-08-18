@@ -32,6 +32,7 @@
 <p>The guided agent is an <strong>Adventure Works</strong> bicycle technical-support assistant, grounded in the troubleshooting articles in <a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a> (documents TS-001 through TS-020).</p>
 <blockquote>
 <p>Facilitator note: paste the prompt below into the agent's <strong>instructions</strong>, upload the <strong><a href="../05-Sample-Files/Sample%20Files%20-%20Good/">Sample Files - Good</a></strong> set as the agent's knowledge/files, then work through the questions with the room.</p>
+<p><strong>⚠️ Model selection — use <code>model-router</code>.</strong> When creating the agent, choose the <strong>Model Router</strong> model deployment instead of a specific model. It automatically selects an appropriate underlying model for each request and is <strong>not restricted by per-model quota</strong>, so teams won't get blocked by quota or capacity errors mid-build. Say this out loud before the room starts creating agents.</p>
 <p><strong>⚠️ Before the event — one-time publishing setup.</strong> If you plan to <strong>publish</strong> the agent to Teams / Microsoft 365 (not just test it in the Foundry playground), the Azure subscription must have the <strong><code>Microsoft.BotService</code></strong> resource provider registered. See <a href="#5-publishing-to-teams--microsoft-365">Publishing to Teams / Microsoft 365</a> at the bottom of this kit. Verify this ahead of time so the room isn't blocked.</p>
 </blockquote>
 <hr />

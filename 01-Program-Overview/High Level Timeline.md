@@ -39,11 +39,12 @@ A high-level, chronological timeline of every step in the program, from initial 
 16. Verify Azure AI Foundry access.
 17. Install VS Code.
 18. Install Python.
-19. Confirm GitHub account readiness.
-20. Activate GitHub Copilot Pro or higher.
+19. Install Git and confirm `git --version` runs successfully.
+20. Confirm GitHub account readiness.
+21. Activate GitHub Copilot Pro or higher.
 
 ### Pre-Skilling
-21. Complete the Microsoft AI Co-Innovation Lab Getting Started curriculum.
+22. Complete the Microsoft AI Co-Innovation Lab Getting Started curriculum.
 
 ---
 
@@ -53,20 +54,20 @@ A high-level, chronological timeline of every step in the program, from initial 
 
 Each weekly meeting follows a standard agenda:
 
-22. **Pre-skilling review** — Check curriculum progress.
-23. **Technical readiness review** — Resolve environment and setup blockers.
-24. **Business readiness review** — Refine use case, outcomes, and documents.
-25. **Collective learning** — Share discoveries, lessons learned, emerging use cases, and open questions across the community.
+23. **Pre-skilling review** — Check curriculum progress.
+24. **Technical readiness review** — Resolve environment and setup blockers.
+25. **Business readiness review** — Refine use case, outcomes, and documents.
+26. **Collective learning** — Share discoveries, lessons learned, emerging use cases, and open questions across the community.
 
 ---
 
 ## Phase 5: Final Readiness Review — Go / No-Go (One Week Before Event)
 
-26. **Confirm pre-skilling complete.**
-27. **Confirm business readiness complete** — Problem, outcome, success criteria, example questions, and documents ready.
-28. **Confirm technical readiness complete** — Azure, VS Code, Python, and GitHub Copilot validated.
-29. **Confirm participation requirements** — Attendance at kickoff and readiness meetings, and confirmed event attendees.
-30. **Identify unresolved blockers** — Organizations with critical unresolved blockers may be deferred to a future program.
+27. **Confirm pre-skilling complete.**
+28. **Confirm business readiness complete** — Problem, outcome, success criteria, example questions, and documents ready.
+29. **Confirm technical readiness complete** — Azure, VS Code, Python, Git, and GitHub Copilot validated.
+30. **Confirm participation requirements** — Attendance at kickoff and readiness meetings, and confirmed event attendees.
+31. **Identify unresolved blockers** — Organizations with critical unresolved blockers may be deferred to a future program.
 
 ---
 
@@ -74,11 +75,11 @@ Each weekly meeting follows a standard agenda:
 
 > Focus: Build and evaluate a Knowledge Base / Technical Support Agent using Azure AI Foundry.
 
-31. **Verify Azure & Foundry access** — Confirm subscription and Azure AI Foundry project readiness.
-32. **Prepare knowledge base documents** — Load company-provided manuals, troubleshooting guides, SOPs, and articles.
-33. **Build the agent** — Create a knowledge-based agent grounded in the provided documents.
-34. **Test example questions** — Validate questions that should and should not work.
-35. **Evaluate the agent** — Assess accuracy, grounding, and troubleshooting quality against success criteria.
+32. **Verify Azure & Foundry access** — Confirm subscription and Azure AI Foundry project readiness.
+33. **Prepare knowledge base documents** — Load company-provided manuals, troubleshooting guides, SOPs, and articles.
+34. **Build the agent** — Create a knowledge-based agent grounded in the provided documents.
+35. **Test example questions** — Validate questions that should and should not work.
+36. **Evaluate the agent** — Assess accuracy, grounding, and troubleshooting quality against success criteria.
 
 ---
 
@@ -86,8 +87,8 @@ Each weekly meeting follows a standard agenda:
 
 > Focus: Build software with AI assistance using GitHub Copilot and VS Code.
 
-36. **Set up development environment** — Confirm VS Code, Python, and GitHub Copilot are working.
-37. **Connect the agent** — Integrate the Day 1 agent into a simple application experience.
-38. **Build with GitHub Copilot** — Use AI-assisted coding to build or modify an application that uses the agent.
-39. **Test the application** — Validate the app works with the agent.
-40. **Wrap-up** — Review outcomes and discuss plans for future deployment.
+37. **Set up development environment** — Confirm VS Code, Python, Git, and GitHub Copilot are working.
+38. **Connect the agent** — Integrate the Day 1 agent into a simple application experience.
+39. **Build with GitHub Copilot** — Use AI-assisted coding to build or modify an application that uses the agent.
+40. **Test the application** — Validate the app works with the agent.
+41. **Wrap-up** — Review outcomes and discuss plans for future deployment.

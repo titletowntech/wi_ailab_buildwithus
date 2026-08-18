@@ -107,6 +107,8 @@ Move on when: everyone has shared and the room feels connected.
 3. Build the agent step by step. Narrate what you're doing and pause so the room can catch up.
 4. Do frequent check-ins: "Thumbs up when your agent is created." Wait for the room before advancing.
 
+> **Use the `model-router` model when creating the agent.** When the room selects a model deployment, have everyone choose **Model Router** rather than a specific model. It automatically routes each request to an appropriate underlying model and is **not restricted by per-model quota** — which avoids the most common in-room blocker of a team hitting a quota or capacity limit on a single model deployment. Call this out *before* people start clicking so nobody has to rebuild.
+
 ### 4b. Test the agent
 1. Run the predefined questions that **should** work (see the [Day 1 Guided Agent Kit](Day%201%20Guided%20Agent%20Kit.md)). Point out *why* the answers are good — they're grounded in the documents.
 2. Run the predefined questions that **should not** work. Show the agent declining or staying within its knowledge, and explain why that's the *correct* behavior.
@@ -146,7 +148,7 @@ Use this as a buffer. Technical and escalation facilitators stay available to un
 
 Do this:
 1. Point teams back to their [Business Readiness Worksheet](../02-Participant-Materials/Business%20Readiness%20Worksheet.md) — problem, outcome, example questions, documents.
-2. Have them upload **their own** files.
+2. Have them upload **their own** files. Remind them to use the **`model-router`** model for this agent too — it avoids per-model quota limits.
 3. Have them write **their own** prompt. Encourage reusing the structure of the guided prompt as a starting point.
 4. Have them **test** deliberately:
    - Which questions **should** work?
@@ -187,10 +189,11 @@ Move on when: a good cross-section of teams has shared and the room has heard va
 
 Do this:
 1. **Preview Day 2.** Show briefly what's possible with code — connecting the agent into a simple application using GitHub Copilot and VS Code.
-2. **Confirm Day 2 setup.** Remind participants to have **VS Code** and **GitHub Copilot** installed and working, and to have the **template app** downloaded ([titletowntech/wi_ailab_prototype_template](https://github.com/titletowntech/wi_ailab_prototype_template)).
-3. Flag any setup gaps now so they can be resolved before Day 2 — hand these to the escalation facilitator.
-4. **Recap the day** and take questions.
-5. Close with the through-line below.
+2. **Confirm Day 2 setup.** Remind participants to have **VS Code**, **Python**, **Git**, and **GitHub Copilot** installed and working. Confirm `git --version` runs successfully, then download the [template app](https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate).
+3. Confirm each team can create a **Microsoft Entra app registration** and assign it the **Azure AI Developer** role on its Foundry project. Identify the Entra and Azure administrators who can help if participants do not have those permissions.
+4. Flag any setup gaps now so they can be resolved before Day 2 — hand these to the escalation facilitator.
+5. **Recap the day** and take questions.
+6. Close with the through-line below.
 
 ---
 
@@ -212,6 +215,7 @@ Common issues and responses:
 | Can't open Foundry | Validate access, browser, account, tenant, permissions |
 | Can't upload files | Check file type, location, browser permissions |
 | Agent answers vaguely | Review document quality and prompt instructions |
+| Model quota or capacity error | Switch the agent to the **`model-router`** model — it isn't restricted by per-model quota |
 | Agent answers unsupported questions | Tighten instructions and re-test the "should not" examples |
 | Team has weak data | Suggest sample files or a narrower scenario |
 | Team is behind | Keep them on the guided agent; skip optional refinements |
@@ -228,7 +232,7 @@ Before closing, confirm:
 - [ ] Every team tested questions that **should** and **should not** work.
 - [ ] Every team identified at least one improvement area.
 - [ ] Teams shared or prepared a short demo.
-- [ ] Day 2 setup requirements were reviewed (VS Code, GitHub Copilot, template app).
+- [ ] Day 2 setup requirements were reviewed (VS Code, Python, Git, GitHub Copilot, public template app, Entra app registration, and Foundry RBAC).
 - [ ] Open blockers are captured with an owner for follow-up before Day 2.
 
 ---

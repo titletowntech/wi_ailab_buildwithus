@@ -89,10 +89,14 @@
 <li>Connect to Wi-Fi</li>
 <li>Connect to Teams (for file sharing)</li>
 <li>Open VS Code and confirm it launches</li>
+<li>Open a terminal and confirm <code>git --version</code> runs successfully</li>
 <li>Confirm GitHub Copilot is signed in and working</li>
-<li>Confirm the template app is downloaded and opens in VS Code</li>
+<li>Download or clone the <a href="https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate">Day 2 template app</a> and open it in VS Code</li>
+<li>Confirm each team can create a Microsoft Entra app registration, or has an administrator available to create one</li>
+<li>Confirm each team can assign the app registration the <strong>Azure AI Developer</strong> role on its Foundry project, or has an Azure administrator available to make the assignment</li>
 </ul>
 <blockquote>
+<p><strong>Organizer prerequisite:</strong> Before sharing the template link, make this repository public or publish the source in another publicly downloadable location and update the link in these materials.</p>
 <p>Facilitators circulate to clear any setup blockers early.</p>
 </blockquote>
 <hr />
@@ -118,6 +122,10 @@
 <p>Everyone builds the same app together using the provided template.</p>
 <ul>
 <li>Tour the template app structure</li>
+<li>Create a dedicated Microsoft Entra app registration for the template app</li>
+<li>Create a client secret and save its value securely; never post it in Teams or commit it to source control</li>
+<li>In the Azure portal, assign the app registration the <strong>Azure AI Developer</strong> role on the team's Foundry project</li>
+<li>Add the tenant ID, client ID, and client secret to the local <code>.env</code> file</li>
 <li>Connect the Day 1 agent to the template app</li>
 <li>Use Copilot to modify and extend the app step by step</li>
 <li>Run the app and confirm it responds using the agent</li>

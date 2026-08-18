@@ -31,7 +31,7 @@
 <p>A detailed, step-by-step plan for the facilitator to run Day 2. Work through it in order, but let the day breathe: the schedule is a guide, not a stopwatch. When a good question or discovery opens a useful tangent, follow it — then bring the room back to the current step.</p>
 <p><strong>Day 2 focus:</strong> Each company uses <strong>GitHub Copilot and VS Code</strong> to build a small app around the agent they created on Day 1 — first a guided build together using the provided template, then a version customized for their own use case. The theme: <em>building software with AI assistance.</em></p>
 <p>Companion documents: <a href="../03-Event-Agendas/Day%202%20Agenda.html">Day 2 Agenda.md</a> · <a href="Day%201%20Facilitator%20Guide.html">Day 1 Facilitator Guide.md</a> · <a href="Day%202%20Guided%20Agent%20Kit.html">Day 2 Guided Agent Kit.md</a></p>
-<p>Template app: the <strong>Wisconsin AI Co-Innovation Lab Prototype Template</strong> (<a href="https://github.com/titletowntech/wi_ailab_prototype_template">titletowntech/wi_ailab_prototype_template</a>) — a reusable Flask framework where each prototype lives in its own folder and a developer only edits a handful of files.</p>
+<p>Template app: <a href="https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate">titletowntech/wi_ailab_prototype_foundrytemplate</a> — the source participants use to connect their Day 1 Foundry agent to an app.</p>
 <hr />
 <h2 id="how-to-use-this-guide">How to Use This Guide</h2>
 <ul>
@@ -46,8 +46,8 @@
 <p>If you have a team, split these roles. If you're running it solo, keep the order the same and lean on the group to help each other.</p>
 <ul>
 <li><strong>Lead facilitator</strong> — Owns pacing and transitions, opens and closes each step, leads the guided build and demos, decides when to follow a tangent and when to move on.</li>
-<li><strong>Technical facilitators</strong> — Circulate during hands-on steps; help with VS Code, Copilot, Python, running the app, and connecting the agent; surface repeated issues so the lead can address the whole room.</li>
-<li><strong>Escalation facilitator</strong> — Owns environment and connection blockers (Copilot sign-in, Python, <code>.env</code>, Foundry agent auth) so they don't slow the room; pulls blocked participants aside; tracks unresolved issues in Teams.</li>
+<li><strong>Technical facilitators</strong> — Circulate during hands-on steps; help with VS Code, Copilot, Python, Git, running the app, and connecting the agent; surface repeated issues so the lead can address the whole room.</li>
+<li><strong>Escalation facilitator</strong> — Owns environment and connection blockers (Copilot sign-in, Python, Git, <code>.env</code>, Foundry agent auth) so they don't slow the room; pulls blocked participants aside; tracks unresolved issues in Teams.</li>
 <li><strong>Room / ops support</strong> — Wi-Fi, check-in, Teams and file sharing, breaks, and logistics.</li>
 </ul>
 <hr />
@@ -56,14 +56,16 @@
 <li>☐ Room, Wi-Fi, and power confirmed; Teams channel open for file sharing.</li>
 <li>☐ Your own copy of the template app running locally — you will demo the finished experience.</li>
 <li>☐ The <strong>finished app</strong> ready to show as the "destination" before anyone builds.</li>
-<li>☐ The template repo available to participants (<a href="https://github.com/titletowntech/wi_ailab_prototype_template">titletowntech/wi_ailab_prototype_template</a>) and confirmed downloadable on the event network.</li>
-<li>☐ A known-good <strong><code>.env</code></strong> recipe ready — the exact Azure AI Foundry values participants need (<code>AZURE_FOUNDRY_ENDPOINT</code>, <code>AZURE_FOUNDRY_API_KEY</code>, <code>AZURE_AI_PROJECT_ENDPOINT</code>) and, for connecting a Day 1 <strong>Foundry agent</strong>, the service-principal values (<code>AZURE_TENANT_ID</code> and the app-registration client ID / secret with the <strong>Azure AI Developer</strong> role on the project).</li>
-<li>☐ Decide and pre-stage the <strong>agent connection path</strong> (see the callout in Step 4) so participants don't lose build time on authentication.</li>
+<li>☐ The template repository is public, or the source is published at another publicly downloadable location and every link in these materials is updated.</li>
+<li>☐ The template repo is confirmed downloadable without authentication on the event network.</li>
+<li>☐ A known-good <strong><code>.env</code></strong> recipe is ready — the exact Azure AI Foundry values participants need (<code>AZURE_FOUNDRY_ENDPOINT</code>, <code>AZURE_FOUNDRY_API_KEY</code>, <code>AZURE_AI_PROJECT_ENDPOINT</code>, <code>AZURE_TENANT_ID</code>, <code>AZURE_CLIENT_ID</code>, and <code>AZURE_CLIENT_SECRET</code>).</li>
+<li>☐ A participant walkthrough is ready for creating an Entra app registration and client secret, then assigning <strong>Azure AI Developer</strong> on the team's Foundry project.</li>
+<li>☐ Teams without app-registration or Azure role-assignment permission have identified administrators available to complete those steps.</li>
 <li>☐ A short list of <strong>guided-build Copilot prompts</strong> ready to share (branding change, add a page, add a feature) — see the <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 handout</a>.</li>
 <li>☐ A shared blocker tracker open (Teams or a simple list) with columns for issue, owner, and status.</li>
 </ul>
 <blockquote>
-<p><strong>Connecting to the Day 1 agent — read this first.</strong> The template chats with a Foundry <strong>model</strong> out of the box. To route chat to the <strong>agent</strong> each team built on Day 1, the app's <strong>Settings</strong> page has a <strong>Backend</strong> dropdown ("Azure Foundry Agent"). The Foundry agent runtime requires a real Azure AD sign-in — the Foundry API key alone is <strong>not</strong> accepted — so it uses a <strong>service principal</strong> (an Entra app registration with a client secret and the <strong>Azure AI Developer</strong> role on the project). This is the single most likely time-sink of the day. Pre-stage it: have the app registration and role assignment ready, and give teams the values, so the room spends its time building, not troubleshooting auth. See the template's README section <em>"Connect to an Azure Foundry agent."</em></p>
+<p><strong>Connecting to the Day 1 agent — read this first.</strong> The template chats with a Foundry <strong>model</strong> out of the box. To route chat to the <strong>agent</strong> each team built on Day 1, the app's <strong>Settings</strong> page has a <strong>Backend</strong> dropdown ("Azure Foundry Agent"). Microsoft Agent Framework requires Microsoft Entra authentication for this connection; the Foundry API key alone is not sufficient. Each team creates a dedicated app registration and client secret, then grants that service principal the <strong>Azure AI Developer</strong> role on its Foundry project. Keep the secret only in the local <code>.env</code> file: never post it in Teams, place it in participant materials, or commit it to source control. See the template's README section <em>"Connect to an Azure Foundry agent."</em></p>
 </blockquote>
 <hr />
 <h2 id="step-1-tech-setup">Step 1 · Tech Setup</h2>
@@ -72,13 +74,17 @@
 1. Welcome people and point them to Wi-Fi and the Teams channel.
 2. Confirm each participant can <strong>open VS Code</strong> and that <strong>GitHub Copilot is signed in and working</strong> (Copilot Chat responds).
 3. Confirm each participant has the <strong>template app downloaded</strong> and open in VS Code.
-4. Confirm Python is available and they can create/activate a virtual environment.
-5. Technical and escalation facilitators circulate to clear setup issues immediately.</p>
+4. Confirm each team can create an <strong>Entra app registration</strong> and assign Azure roles, or has the appropriate administrators available.
+5. Confirm Python is available and they can create/activate a virtual environment.
+6. Open a terminal and confirm <code>git --version</code> runs successfully.
+7. Technical and escalation facilitators circulate to clear setup issues immediately.</p>
 <p>Watch for:
 - Copilot not suggesting or Chat unavailable → check sign-in and the correct GitHub account with an active Copilot plan.
 - <code>python</code> not recognized, or <code>pip install</code> blocked → work as an escalation blocker.
-- Template not downloaded → get them the repo before content starts.</p>
-<p>Move on when: most of the room has VS Code + Copilot working and the template open. Hand stragglers to escalation and begin.</p>
+- <code>git</code> not recognized → install Git, restart the terminal, and run <code>git --version</code> again.
+- Template not downloaded → get them the repo before content starts.
+- App registration or role assignment is blocked → involve the team's Entra or Azure administrator.</p>
+<p>Move on when: most of the room has VS Code, Python, Git, and Copilot working and the template open. Hand stragglers to escalation and begin.</p>
 <hr />
 <h2 id="step-2-day-2-overview">Step 2 · Day 2 Overview</h2>
 <p><strong>Goal:</strong> Everyone understands what they're building today and how AI helps them build it.</p>
@@ -144,13 +150,15 @@
 <h3 id="4b-create-the-project-and-set-credentials">4b. Create the project and set credentials</h3>
 <ol>
 <li>Have each team <strong>copy</strong> <code>projects/_template</code> to a new folder (e.g., <code>projects/my-company</code>).</li>
-<li>Copy <code>.env.example</code> to <code>.env</code> and fill in the Azure AI Foundry values from your prepared recipe.</li>
+<li>Have each team create a dedicated <strong>Microsoft Entra app registration</strong> and a client secret. Copy the secret value immediately and store it securely; it is shown only once.</li>
+<li>In the Azure portal, open the team's Foundry project access control (<strong>IAM</strong>) and assign the app registration the <strong>Azure AI Developer</strong> role.</li>
+<li>Copy <code>.env.example</code> to <code>.env</code> and fill in the Azure AI Foundry values plus <code>AZURE_TENANT_ID</code>, <code>AZURE_CLIENT_ID</code>, and <code>AZURE_CLIENT_SECRET</code>. Confirm <code>.env</code> is excluded from source control.</li>
 <li>Install dependencies and confirm the app <strong>runs</strong> before changing anything: activate the virtual environment, <code>pip install -r requirements.txt</code>, <code>python app.py</code>, then open <code>http://localhost:5000</code>.</li>
 <li>Get a working, unmodified app on every screen before customizing — a shared "it works" moment.</li>
 </ol>
 <h3 id="4c-connect-the-day-1-agent">4c. Connect the Day 1 agent</h3>
 <ol>
-<li>Follow your pre-staged connection path (see the callout in <em>Before the Day Starts</em>).</li>
+<li>Confirm the team's app registration, client secret, and Foundry role assignment are complete.</li>
 <li>In the running app, open the <strong>Settings</strong> page and set the <strong>Backend</strong> to <strong>Azure Foundry Agent</strong> so chat routes to the team's Day 1 agent.</li>
 <li>Confirm the app answers using the agent, not a generic model.</li>
 </ol>
@@ -171,7 +179,7 @@
 <p>Watch for:
 - App won't start → almost always a <code>.env</code> value or a Python/venv issue; check those first.
 - Port <code>5000</code> already in use → stop the other process or run on a different port.
-- Agent errors / auth failures → the Foundry-agent service-principal setup; hand to escalation with the prepared values.
+- Agent errors / auth failures → verify tenant/client IDs, secret value and expiration, and the Foundry role assignment; never ask a participant to post the secret in chat or Teams.
 - Copilot edit breaks the app → use it as a teaching moment: undo, describe the goal more precisely, try again.</p>
 <p>Tangent to allow: "could Copilot add <em>X</em>?" is a great live demo — try it together briefly, then return.</p>
 <p>Move on when: every team has the template app running, connected to their Day 1 agent, with at least one Copilot-made change and a successful test.</p>
@@ -261,7 +269,7 @@
 </tr>
 <tr>
 <td>Agent auth / Foundry connection error</td>
-<td>Use the pre-staged service principal values; hand to escalation</td>
+<td>Verify the team's app registration, secret, tenant/client IDs, and Foundry role assignment; hand to escalation without sharing the secret</td>
 </tr>
 <tr>
 <td>App runs but the agent errors</td>

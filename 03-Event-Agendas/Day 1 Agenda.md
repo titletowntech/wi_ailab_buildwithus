@@ -98,6 +98,7 @@ Companies optionally demo what they built:
 Preview what's possible with code, and confirm everyone is ready for Day 2.
 
 - Show what can be done using coding (GitHub Copilot + VS Code)
-- Remind participants to have **VS Code** and **GitHub Copilot** installed
+- Remind participants to have **VS Code**, **Python**, **Git**, and **GitHub Copilot** installed
+- Confirm `git --version` runs successfully in a terminal
 - Remind participants to download the **template app**
 - Recap the day and answer questions

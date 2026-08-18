@@ -83,7 +83,7 @@ Keep it simple and predictable. Use **standard** channels (visible to all member
 | **👋 Start Here** | Onboarding, introductions, how the community works | Pin the welcome post and key links |
 | **✅ Readiness Help** | Business + technical readiness questions and blockers | The busiest channel; questions and blockers land here |
 | **🧠 Pre-Skilling & Resources** | Curriculum links, worksheets, readiness pages, recordings | Pin docs as tabs (Step 5) |
-| **🛠️ Tech Support & Blockers** | Environment/setup issues (Azure, VS Code, Python, Copilot) | Feeds the blocker board |
+| **🛠️ Tech Support & Blockers** | Environment/setup issues (Azure, VS Code, Python, Git, Copilot) | Feeds the blocker board |
 | **💡 Show & Tell** | Discoveries, tips, "prompt of the day," demos | Celebrate wins; encourage peer learning |
 | **🎉 Event Days** | Live Day 1 / Day 2 coordination and Q&A | Active only during the event |
 | **☕ Community / Social** | Introductions and informal chat | Keeps the community human |
@@ -106,7 +106,7 @@ Keep it simple and predictable. Use **standard** channels (visible to all member
 Turn each channel into a workspace by pinning the right tabs:
 
 - **Files / worksheets** — Upload the [Homework Package](../02-Participant-Materials/Homework%20Package.md), [Pre-Skilling Package](../02-Participant-Materials/Pre-Skilling%20Package.md), and the [Business](../02-Participant-Materials/Business%20Readiness%20Worksheet.md) and [Technical](../02-Participant-Materials/Technical%20Readiness%20Worksheet.md) worksheets, and pin them as tabs in *Pre-Skilling & Resources*.
-- **Blocker board (Planner / Tasks in Teams)** — Add a **Tasks by Planner** tab in *Tech Support & Blockers* with buckets **New → In Progress → Resolved**, assign an owner and due date to each blocker, and label by area (Azure, VS Code, Python, Copilot). See [Use the Tasks app in Teams](https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/6-use-tasks-app-teams).
+- **Blocker board (Planner / Tasks in Teams)** — Add a **Tasks by Planner** tab in *Tech Support & Blockers* with buckets **New → In Progress → Resolved**, assign an owner and due date to each blocker, and label by area (Azure, VS Code, Python, Git, Copilot). See [Use the Tasks app in Teams](https://learn.microsoft.com/training/modules/create-manage-teams-channels-microsoft-teams/6-use-tasks-app-teams).
 - **Shared knowledge base (OneNote or a Wiki-style page)** — Capture recurring answers and fixes so the same question is answered once.
 - **Website tabs** — Pin the [pre-skilling site](https://titletowntech.github.io/wi_ailab_labwebsite/index.html) and its readiness pages directly in *Pre-Skilling & Resources*.
 - **Forms** — A short weekly **readiness pulse** and a **post-event feedback** form (see Section 9 for AI summarization).

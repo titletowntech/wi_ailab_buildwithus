@@ -106,6 +106,9 @@
 <li>Build the agent step by step. Narrate what you're doing and pause so the room can catch up.</li>
 <li>Do frequent check-ins: "Thumbs up when your agent is created." Wait for the room before advancing.</li>
 </ol>
+<blockquote>
+<p><strong>Use the <code>model-router</code> model when creating the agent.</strong> When the room selects a model deployment, have everyone choose <strong>Model Router</strong> rather than a specific model. It automatically routes each request to an appropriate underlying model and is <strong>not restricted by per-model quota</strong> — which avoids the most common in-room blocker of a team hitting a quota or capacity limit on a single model deployment. Call this out <em>before</em> people start clicking so nobody has to rebuild.</p>
+</blockquote>
 <h3 id="4b-test-the-agent">4b. Test the agent</h3>
 <ol>
 <li>Run the predefined questions that <strong>should</strong> work (see the <a href="Day%201%20Guided%20Agent%20Kit.html">Day 1 Guided Agent Kit</a>). Point out <em>why</em> the answers are good — they're grounded in the documents.</li>
@@ -140,7 +143,7 @@
 <p><strong>Goal:</strong> Each company applies what they learned to their own use case, with one-on-one coaching. This is where the value becomes real for them.</p>
 <p>Do this:
 1. Point teams back to their <a href="../02-Participant-Materials/Business%20Readiness%20Worksheet.html">Business Readiness Worksheet</a> — problem, outcome, example questions, documents.
-2. Have them upload <strong>their own</strong> files.
+2. Have them upload <strong>their own</strong> files. Remind them to use the <strong><code>model-router</code></strong> model for this agent too — it avoids per-model quota limits.
 3. Have them write <strong>their own</strong> prompt. Encourage reusing the structure of the guided prompt as a starting point.
 4. Have them <strong>test</strong> deliberately:
    - Which questions <strong>should</strong> work?
@@ -169,10 +172,11 @@
 <p><strong>Goal:</strong> Everyone is set up and motivated for Day 2, where they'll build a small app around their agent using GitHub Copilot.</p>
 <p>Do this:
 1. <strong>Preview Day 2.</strong> Show briefly what's possible with code — connecting the agent into a simple application using GitHub Copilot and VS Code.
-2. <strong>Confirm Day 2 setup.</strong> Remind participants to have <strong>VS Code</strong> and <strong>GitHub Copilot</strong> installed and working, and to have the <strong>template app</strong> downloaded (<a href="https://github.com/titletowntech/wi_ailab_prototype_template">titletowntech/wi_ailab_prototype_template</a>).
-3. Flag any setup gaps now so they can be resolved before Day 2 — hand these to the escalation facilitator.
-4. <strong>Recap the day</strong> and take questions.
-5. Close with the through-line below.</p>
+2. <strong>Confirm Day 2 setup.</strong> Remind participants to have <strong>VS Code</strong>, <strong>Python</strong>, <strong>Git</strong>, and <strong>GitHub Copilot</strong> installed and working. Confirm <code>git --version</code> runs successfully, then download the <a href="https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate">template app</a>.
+3. Confirm each team can create a <strong>Microsoft Entra app registration</strong> and assign it the <strong>Azure AI Developer</strong> role on its Foundry project. Identify the Entra and Azure administrators who can help if participants do not have those permissions.
+4. Flag any setup gaps now so they can be resolved before Day 2 — hand these to the escalation facilitator.
+5. <strong>Recap the day</strong> and take questions.
+6. Close with the through-line below.</p>
 <hr />
 <h2 id="blocker-model-green-yellow-red">Blocker Model (Green / Yellow / Red)</h2>
 <p>Use this all day to keep the room moving:</p>
@@ -208,6 +212,10 @@
 <td>Review document quality and prompt instructions</td>
 </tr>
 <tr>
+<td>Model quota or capacity error</td>
+<td>Switch the agent to the <strong><code>model-router</code></strong> model — it isn't restricted by per-model quota</td>
+</tr>
+<tr>
 <td>Agent answers unsupported questions</td>
 <td>Tighten instructions and re-test the "should not" examples</td>
 </tr>
@@ -231,7 +239,7 @@
 <li>☐ Every team tested questions that <strong>should</strong> and <strong>should not</strong> work.</li>
 <li>☐ Every team identified at least one improvement area.</li>
 <li>☐ Teams shared or prepared a short demo.</li>
-<li>☐ Day 2 setup requirements were reviewed (VS Code, GitHub Copilot, template app).</li>
+<li>☐ Day 2 setup requirements were reviewed (VS Code, Python, Git, GitHub Copilot, public template app, Entra app registration, and Foundry RBAC).</li>
 <li>☐ Open blockers are captured with an owner for follow-up before Day 2.</li>
 </ul>
 <hr />

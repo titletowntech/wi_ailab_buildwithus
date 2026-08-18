@@ -39,8 +39,12 @@ Complete the following:
 - [ ] Azure AI Foundry access — [guide](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/foundry.html)
 - [ ] VS Code installed — [guide](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/vscode.html)
 - [ ] Python installed — [guide](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/python.html)
+- [ ] Git installed and `git --version` runs successfully
 - [ ] GitHub account ready — [guide](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/copilot.html)
 - [ ] GitHub Copilot Pro or higher subscription — [guide](https://titletowntech.github.io/wi_ailab_labwebsite/readiness/copilot.html)
+- [ ] [Day 2 template app](https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate) downloads successfully
+- [ ] Permission to create a Microsoft Entra app registration, or an administrator identified who can create it
+- [ ] Permission to assign **Azure AI Developer** on the Foundry project, or an Azure administrator identified who can make the assignment
 
 > If any item needs IT or admin approval at your company, start that process early and let us know at the next readiness meeting so we can plan around the timing.
 
@@ -68,6 +72,6 @@ Complete the learning curriculum in the [Pre-Skilling Package](Pre-Skilling%20Pa
 You're ready for the event when:
 
 - Your business use case, outcome, success criteria, questions, and documents are complete
-- Your Azure, Azure AI Foundry, VS Code, Python, GitHub, and Copilot setup is verified
+- Your Azure, Azure AI Foundry, VS Code, Python, Git, GitHub, and Copilot setup is verified
 - The Getting Started pre-skilling is complete
 - No critical blockers remain

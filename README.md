@@ -109,7 +109,7 @@ A styled, static HTML version of these documents — matching the [pre-skilling 
 An organization is **ready** for the event when all three tracks are complete:
 
 - **Business readiness** — Problem, desired outcome, success criteria, example questions, and knowledge-base documents are defined and available.
-- **Technical readiness** — Azure subscription, Azure AI Foundry access, VS Code, Python, GitHub account, and GitHub Copilot Pro (or higher) are all verified and working.
+- **Technical readiness** — Azure subscription, Azure AI Foundry access, VS Code, Python, Git, GitHub account, and GitHub Copilot Pro (or higher) are all verified and working.
 - **Pre-skilling** — The Microsoft AI Co-Innovation Lab Getting Started curriculum is complete.
 
 Organizations with unresolved critical blockers may be deferred to a future program so event time stays focused on building — not environment setup.

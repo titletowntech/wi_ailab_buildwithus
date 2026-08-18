@@ -2,7 +2,7 @@
 
 Everything the facilitator needs to run the **guided build** in Step 4 of the [Day 2 Facilitator Guide](Day%202%20Facilitator%20Guide.md): the shared scenario, the connection recipe, an ordered build script with the exact Copilot prompts to use at each step, and test questions.
 
-The guided build continues yesterday's story: everyone wraps the **Adventure Works** bicycle support agent from Day 1 in a simple app using the [prototype template](https://github.com/titletowntech/wi_ailab_prototype_template), with GitHub Copilot doing the typing.
+The guided build continues yesterday's story: everyone wraps the **Adventure Works** bicycle support agent from Day 1 in a simple app using the [Foundry prototype template](https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate), with GitHub Copilot doing the typing.
 
 Companion handout: [Copilot 101 — Sample Markdown & Prompt Examples](Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md).
 
@@ -10,20 +10,22 @@ Companion handout: [Copilot 101 — Sample Markdown & Prompt Examples](Copilot%2
 
 ---
 
-## 0. Connection Recipe (facilitator provides)
+## 0. Connection Prerequisites
 
-Have these ready so teams don't lose time on setup or authentication:
+Confirm these before the guided build:
 
-- **Template** downloaded, VS Code open, GitHub Copilot signed in and working.
+- **Development tools** are ready: VS Code, Python, and Git are installed; `git --version` runs successfully; and GitHub Copilot is signed in.
+- **Template source** is publicly downloadable. Each team has downloaded it and opened it in VS Code.
 - **`.env` values** for the Foundry project:
   - `AZURE_FOUNDRY_ENDPOINT`
   - `AZURE_FOUNDRY_API_KEY`
   - `AZURE_AI_PROJECT_ENDPOINT`
-- **To connect the Day 1 agent** (the Foundry agent runtime needs a real sign-in — the API key alone is **not** accepted), pre-stage a **service principal** and give teams:
+- **To connect the Day 1 agent**, each team creates a dedicated Microsoft Entra app registration and client secret, then records:
   - `AZURE_TENANT_ID`
   - `AZURE_CLIENT_ID`
   - `AZURE_CLIENT_SECRET`
-  - (The app registration needs the **Azure AI Developer** role on the Foundry project.)
+  - The app registration needs the **Azure AI Developer** role on the team's Foundry project.
+  - Keep the secret only in the local `.env` file. Never share it in Teams or commit it to source control.
 - **The Day 1 agent name** — the Adventure Works support agent each team deployed (set on the app's Settings page).
 
 ---
@@ -32,9 +34,12 @@ Have these ready so teams don't lose time on setup or authentication:
 
 Get an unmodified app running on every screen first — a shared "it works" moment before any changes.
 
-1. Copy `projects/_template` to a new folder, e.g. `projects/adventure-works`.
-2. Copy `.env.example` to `.env` and fill in the values from the recipe above.
-3. Activate the virtual environment, then install and run:
+1. Download or clone the [template repository](https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate).
+2. Copy `projects/_template` to a new folder, e.g. `projects/adventure-works`.
+3. Create a Microsoft Entra app registration for the app and create a client secret. Copy the secret value immediately; it is shown only once.
+4. In the Azure portal, open the Foundry project access control (**IAM**) and assign the app registration the **Azure AI Developer** role.
+5. Copy `.env.example` to `.env`, fill in the values above, and confirm `.env` is excluded from source control.
+6. Activate the virtual environment, then install and run:
    ```powershell
    .\.venv\Scripts\Activate.ps1
    pip install -r requirements.txt
@@ -107,7 +112,8 @@ And these should be politely declined (out of scope), showing the agent stays in
 ## 5. Facilitator Notes
 
 - Keep the whole room on the **same app** through Section 3 so no one falls behind; save personal creativity for the afternoon "Build Your Own" block.
-- The biggest time-sink is **agent authentication** (Section 2). Pre-stage the service principal and hand out the values.
+- The biggest time-sink is **agent authentication**. Verify app-registration and role-assignment permissions before the event, and have the appropriate administrators available.
+- Do not request, collect, or redistribute participant client secrets. Troubleshoot by checking the variable names, secret expiration, and role assignment with the participant at their screen.
 - When a Copilot change breaks the app, coach the **undo → clearer prompt → retry** loop rather than debugging line by line.
 - More prompt patterns and weak-vs-strong examples are in the [Copilot 101 handout](Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md).
 - Full step-by-step facilitation lives in the [Day 2 Facilitator Guide](Day%202%20Facilitator%20Guide.md).

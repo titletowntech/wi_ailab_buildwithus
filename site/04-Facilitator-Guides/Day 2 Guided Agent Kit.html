@@ -29,33 +29,38 @@
 
   <article class="learn-body">
 <p>Everything the facilitator needs to run the <strong>guided build</strong> in Step 4 of the <a href="Day%202%20Facilitator%20Guide.html">Day 2 Facilitator Guide</a>: the shared scenario, the connection recipe, an ordered build script with the exact Copilot prompts to use at each step, and test questions.</p>
-<p>The guided build continues yesterday's story: everyone wraps the <strong>Adventure Works</strong> bicycle support agent from Day 1 in a simple app using the <a href="https://github.com/titletowntech/wi_ailab_prototype_template">prototype template</a>, with GitHub Copilot doing the typing.</p>
+<p>The guided build continues yesterday's story: everyone wraps the <strong>Adventure Works</strong> bicycle support agent from Day 1 in a simple app using the <a href="https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate">Foundry prototype template</a>, with GitHub Copilot doing the typing.</p>
 <p>Companion handout: <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 — Sample Markdown &amp; Prompt Examples</a>.</p>
 <blockquote>
 <p>Facilitator note: participants only ever edit a few files — <code>project_config.py</code>, <code>core/tools/example_tools.py</code>, <code>custom_tools.py</code>, and <code>app.py</code>. The <code>core/</code> and <code>ui/</code> folders are the shared framework and stay untouched.</p>
 </blockquote>
 <hr />
-<h2 id="0-connection-recipe-facilitator-provides">0. Connection Recipe (facilitator provides)</h2>
-<p>Have these ready so teams don't lose time on setup or authentication:</p>
+<h2 id="0-connection-prerequisites">0. Connection Prerequisites</h2>
+<p>Confirm these before the guided build:</p>
 <ul>
-<li><strong>Template</strong> downloaded, VS Code open, GitHub Copilot signed in and working.</li>
+<li><strong>Development tools</strong> are ready: VS Code, Python, and Git are installed; <code>git --version</code> runs successfully; and GitHub Copilot is signed in.</li>
+<li><strong>Template source</strong> is publicly downloadable. Each team has downloaded it and opened it in VS Code.</li>
 <li><strong><code>.env</code> values</strong> for the Foundry project:</li>
 <li><code>AZURE_FOUNDRY_ENDPOINT</code></li>
 <li><code>AZURE_FOUNDRY_API_KEY</code></li>
 <li><code>AZURE_AI_PROJECT_ENDPOINT</code></li>
-<li><strong>To connect the Day 1 agent</strong> (the Foundry agent runtime needs a real sign-in — the API key alone is <strong>not</strong> accepted), pre-stage a <strong>service principal</strong> and give teams:</li>
+<li><strong>To connect the Day 1 agent</strong>, each team creates a dedicated Microsoft Entra app registration and client secret, then records:</li>
 <li><code>AZURE_TENANT_ID</code></li>
 <li><code>AZURE_CLIENT_ID</code></li>
 <li><code>AZURE_CLIENT_SECRET</code></li>
-<li>(The app registration needs the <strong>Azure AI Developer</strong> role on the Foundry project.)</li>
+<li>The app registration needs the <strong>Azure AI Developer</strong> role on the team's Foundry project.</li>
+<li>Keep the secret only in the local <code>.env</code> file. Never share it in Teams or commit it to source control.</li>
 <li><strong>The Day 1 agent name</strong> — the Adventure Works support agent each team deployed (set on the app's Settings page).</li>
 </ul>
 <hr />
 <h2 id="1-copy-the-template-and-run-the-baseline">1. Copy the Template and Run the Baseline</h2>
 <p>Get an unmodified app running on every screen first — a shared "it works" moment before any changes.</p>
 <ol>
+<li>Download or clone the <a href="https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate">template repository</a>.</li>
 <li>Copy <code>projects/_template</code> to a new folder, e.g. <code>projects/adventure-works</code>.</li>
-<li>Copy <code>.env.example</code> to <code>.env</code> and fill in the values from the recipe above.</li>
+<li>Create a Microsoft Entra app registration for the app and create a client secret. Copy the secret value immediately; it is shown only once.</li>
+<li>In the Azure portal, open the Foundry project access control (<strong>IAM</strong>) and assign the app registration the <strong>Azure AI Developer</strong> role.</li>
+<li>Copy <code>.env.example</code> to <code>.env</code>, fill in the values above, and confirm <code>.env</code> is excluded from source control.</li>
 <li>Activate the virtual environment, then install and run:
    <code>powershell
    .\.venv\Scripts\Activate.ps1
@@ -123,7 +128,8 @@
 <h2 id="5-facilitator-notes">5. Facilitator Notes</h2>
 <ul>
 <li>Keep the whole room on the <strong>same app</strong> through Section 3 so no one falls behind; save personal creativity for the afternoon "Build Your Own" block.</li>
-<li>The biggest time-sink is <strong>agent authentication</strong> (Section 2). Pre-stage the service principal and hand out the values.</li>
+<li>The biggest time-sink is <strong>agent authentication</strong>. Verify app-registration and role-assignment permissions before the event, and have the appropriate administrators available.</li>
+<li>Do not request, collect, or redistribute participant client secrets. Troubleshoot by checking the variable names, secret expiration, and role assignment with the participant at their screen.</li>
 <li>When a Copilot change breaks the app, coach the <strong>undo → clearer prompt → retry</strong> loop rather than debugging line by line.</li>
 <li>More prompt patterns and weak-vs-strong examples are in the <a href="Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.html">Copilot 101 handout</a>.</li>
 <li>Full step-by-step facilitation lives in the <a href="Day%202%20Facilitator%20Guide.html">Day 2 Facilitator Guide</a>.</li>

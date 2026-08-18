@@ -17,7 +17,9 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [x] Create the Day 1 facilitator guide from the [Day 1 Agenda.md](../03-Event-Agendas/Day%201%20Agenda.md) — [Day 1 Facilitator Guide.md](../04-Facilitator-Guides/Day%201%20Facilitator%20Guide.md)
 - [x] Prepare the Day 1 guided-agent and good-vs-bad-data sample files — [Sample Files - Good](../05-Sample-Files/Sample%20Files%20-%20Good/), [Sample Files - Bad](../05-Sample-Files/Sample%20Files%20-%20Bad/)
 - [x] Write the Day 1 guided-agent prompt and test questions (should-work / should-not-work) — [Day 1 Guided Agent Kit.md](../04-Facilitator-Guides/Day%201%20Guided%20Agent%20Kit.md)
-- [x] Prepare the Day 2 template application — using the Wisconsin AI Co-Innovation Lab Prototype Template ([titletowntech/wi_ailab_prototype_template](https://github.com/titletowntech/wi_ailab_prototype_template))
+- [x] Prepare the Day 2 template application — [titletowntech/wi_ailab_prototype_foundrytemplate](https://github.com/titletowntech/wi_ailab_prototype_foundrytemplate)
+- [ ] Make the template repository public, or publish it at another publicly downloadable location and update all template links
+- [ ] Prepare a participant walkthrough for creating a Microsoft Entra app registration, creating a client secret, and assigning **Azure AI Developer** on the Foundry project
 - [x] Create the Day 2 facilitator guide from the [Day 2 Agenda.md](../03-Event-Agendas/Day%202%20Agenda.md) — [Day 2 Facilitator Guide.md](../04-Facilitator-Guides/Day%202%20Facilitator%20Guide.md)
 - [x] Write the Day 2 guided-build script, connection recipe, and Copilot prompts — [Day 2 Guided Agent Kit.md](../04-Facilitator-Guides/Day%202%20Guided%20Agent%20Kit.md)
 - [x] Prepare the Day 2 Copilot 101 handout (sample Markdown and prompt examples) — [Copilot 101 - Sample Markdown and Prompts.md](../04-Facilitator-Guides/Copilot%20101%20-%20Sample%20Markdown%20and%20Prompts.md)
@@ -81,6 +83,8 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [ ] Confirm each org's pre-skilling is complete
 - [ ] Confirm each org's business readiness is complete
 - [ ] Confirm each org's technical readiness is complete
+- [ ] Confirm each org can create an Entra app registration and assign Foundry RBAC, or has the required administrators scheduled to help
+- [ ] Confirm the public template link downloads without authentication
 - [ ] Confirm participation requirements met (kickoff + readiness meetings)
 - [ ] Confirm final event attendee lists
 - [ ] Make Go / No-Go decision per organization
@@ -110,7 +114,9 @@ An organizer's checklist of everything **I** need to do to prepare for and run t
 - [ ] Guide participants to evaluate the agent against success criteria
 
 ### Day 2 — Build the App with GitHub Copilot
-- [ ] Confirm VS Code, Python, and Copilot are working for each participant
+- [ ] Confirm VS Code, Python, Git (`git --version`), and Copilot are working for each participant
+- [ ] Confirm each team downloaded the public template source
+- [ ] Guide each team to create its Entra app registration and assign **Azure AI Developer** on its Foundry project
 - [ ] Guide participants to connect the agent to a simple app
 - [ ] Guide participants to build/modify the app with Copilot
 - [ ] Guide participants to test the app
