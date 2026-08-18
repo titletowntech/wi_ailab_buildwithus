@@ -20,6 +20,9 @@ A standard, repeatable agenda for the weekly readiness meetings (Weeks 1–4). T
 
 ## Welcome & Week's Focus
 
+- Revisit the purpose and flow of the Build with us event: participants turn a real support or knowledge base use case into a working AI agent and app over two hands-on days
+  - **Day 1:** Build, test, and deploy an agent in Azure AI Foundry—first through a guided exercise, then with each team's own files, prompt, and use case
+  - **Day 2:** Use GitHub Copilot and VS Code to connect that agent to a template app, customize and test the app, and share what was built
 - Remind everyone this is a collaborative community — we succeed together, share openly, and help each other clear blockers so no team is left behind
   - Invite everyone to share technical discoveries and lessons learned
   - Surface any emerging use cases
@@ -34,19 +37,20 @@ A standard, repeatable agenda for the weekly readiness meetings (Weeks 1–4). T
 Confirm progress on the Getting Started curriculum and readiness pages.
 
 - Who has completed the pre-skilling curriculum?
-- Any questions or sticking points on the readiness pages (Azure, VS Code, Python, Copilot)?
+- Any questions or sticking points on the readiness pages (Azure, VS Code, Python, Git, Copilot)?
 - Note anyone falling behind and why
 
 ---
 
 ## 2. Technical Readiness Review
 
-Walk the four readiness areas and clear blockers.
+Walk the readiness areas and clear blockers.
 
 - **Azure** — subscription access verified?
 - **Azure AI Foundry** — can create/open a project?
 - **VS Code** — installed and launching?
 - **Python** — installed with working pip?
+- **Git** — installed and does `git --version` run successfully?
 - **GitHub Copilot** — Pro or higher active in VS Code?
 - Log new blockers with **issue, owner, and status**
 - Flag anything needing IT/admin approval so we can plan around the timing
